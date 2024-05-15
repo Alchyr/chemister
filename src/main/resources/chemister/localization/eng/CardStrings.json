@@ -1,0 +1,350 @@
+{
+  "${modID}:ex": {
+    "NAME": "a",
+    "DESCRIPTION": "a.",
+    "UPGRADE_DESCRIPTION": "a",
+    "EXTENDED_DESCRIPTION": [
+      "colors:",
+      "[#bf7330]Terra[]",
+      "[#f22424]Ignis[]",
+      "[#4f52ff]Aqua[]",
+      "[#90e2e8]Aer[]"
+    ]
+  },
+  "${modID}:Strike": {
+    "NAME": "Strike",
+    "DESCRIPTION": "Deal !D! damage."
+  },
+  "${modID}:Defend": {
+    "NAME": "Defend",
+    "DESCRIPTION": "Gain !B! Block."
+  },
+  "${modID}:LavaSpill": {
+    "NAME": "Lava Spill",
+    "DESCRIPTION": "${modID}:Infuse [#f22424]Ignis[] and [#bf7330]Terra[]."
+  },
+  "${modID}:FuturesightFumes": {
+    "NAME": "Futuresight Fumes",
+    "DESCRIPTION": "Scry !M!. NL If the top card of your draw pile has a ${modID}:Base of 2 or more, ${modID}:Infuse [#90e2e8]Aer[]. Otherwise, ${modID}:Infuse [#4f52ff]Aqua[]."
+  },
+  "${modID}:Updraught": {
+    "NAME": "Updraught",
+    "DESCRIPTION": "Deal !D! damage. NL ${modID}:Infuse [#4f52ff]Aqua[]."
+  },
+  "${modID}:Stalagmite": {
+    "NAME": "Stalagmite",
+    "DESCRIPTION": "Deal !D! damage. NL ${modID}:Infuse [#bf7330]Terra[]."
+  },
+  "${modID}:DoubleDisplacement": {
+    "NAME": "Double Displacement",
+    "DESCRIPTION": "Deal !D! damage. NL ${modID}:Withdrawal: Deal !D! damage.",
+    "EXTENDED_DESCRIPTION": [
+      "Single Displacement"
+    ]
+  },
+  "${modID}:TripleThreat": {
+    "NAME": "Triple Threat",
+    "DESCRIPTION": "Gain !B! Block. NL Deal !D! damage. NL ${modID}:Withdrawal: ${modID}:Infuse [#f22424]Ignis[]."
+  },
+  "${modID}:WildRush": {
+    "NAME": "Wild Rush",
+    "DESCRIPTION": "${modID}:Infuse [#90e2e8]Aer[]. NL Deal !D! damage to ALL enemies.",
+    "UPGRADE_DESCRIPTION": "${modID}:Infuse [#90e2e8]Aer[] twice. NL Deal !D! damage to ALL enemies."
+  },
+  "${modID}:Neutralization": {
+    "NAME": "Neutralization",
+    "DESCRIPTION": "${modID}:Catalyst. NL Deal damage equal to the total ${modID}:Base of your hand.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (Deals !D! damage.)"
+    ]
+  },
+  "${modID}:DustUp": {
+    "NAME": "Dust-Up",
+    "DESCRIPTION": "Deal !D! damage. NL If you ${modID}:Infused [#bf7330]Terra[] this turn, gain !B! Block."
+  },
+  "${modID}:BlisterBlast": {
+    "NAME": "Blister Blast",
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Vulnerable. NL Applies twice as much if you ${modID}:Infused [#f22424]Ignis[] this turn."
+  },
+  "${modID}:AdaptiveAssault": {
+    "NAME": "Adaptive Assault",
+    "DESCRIPTION": "Deal !D! damage. NL If the enemy intends to attack, ${modID}:Infuse [#bf7330]Terra[]. Otherwise, ${modID}:Infuse [#90e2e8]Aer[]."
+  },
+  "${modID}:Leidenfrost": {
+    "NAME": "Leidenfrost",
+    "DESCRIPTION": "Gain !B! Block. NL ${modID}:Infuse [#4f52ff]Aqua[]."
+  },
+  "${modID}:SoberWit": {
+    "NAME": "Sober Wit",
+    "DESCRIPTION": "{@@}Gain !B! Block. NL ${modID}:Withdrawal: Draw !M! card{!M!|1=|@=s}."
+  },
+  "${modID}:EnfeeblingFumes": {
+    "NAME": "Enfeebling Fumes",
+    "DESCRIPTION": "Apply !M! Weak. NL Gain !B! Block."
+  },
+  "${modID}:BodyOfKnowledge": {
+    "NAME": "Body of Knowledge",
+    "DESCRIPTION": "{@@}${modID}:Catalyst. NL Draw !M! card{!M!|1=|@=s}."
+  },
+  "${modID}:EfficientPlanning": {
+    "NAME": "Efficient Planning",
+    "DESCRIPTION": "${modID}:Catalyst. NL Reduce the cost of all cards in hand by !M! for the turn."
+  },
+  "${modID}:ThinkFast": {
+    "NAME": "Think Fast!",
+    "DESCRIPTION": "${modID}:Infuse a random Flask. NL ${modID}:Withdrawal: ${modID}:Infuse [#4f52ff]Aqua[] instead. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "${modID}:Infuse a random Flask. NL ${modID}:Withdrawal: ${modID}:Infuse [#4f52ff]Aqua[] instead."
+  },
+  "${modID}:MoltenMettle": {
+    "NAME": "Molten Mettle",
+    "DESCRIPTION": "Gain !B! Block. NL ${modID}:Infuse [#f22424]Ignis[]."
+  },
+  "${modID}:PotentMiasma": {
+    "NAME": "Potent Miasma",
+    "DESCRIPTION": "Apply !M! Weak. NL ${modID}:Withdrawal: Enemy loses !${modID}:STR! Strength this turn."
+  },
+  "${modID}:Tremorsense": {
+    "NAME": "Tremorsense",
+    "DESCRIPTION": "Scry !M!. NL ${modID}:Infuse [#90e2e8]Aer[]. NL If the top card of your draw pile has a ${modID}:Base of 2 or more, ${modID}:Infuse [#bf7330]Terra[]."
+  },
+  "${modID}:TidalTincture": {
+    "NAME": "Tidal Tincture",
+    "DESCRIPTION": "The first time each combat you ${modID}:Infuse [#4f52ff]Aqua[], draw 1 additional card."
+  },
+  "${modID}:SearingSulfur": {
+    "NAME": "Searing Sulfur",
+    "DESCRIPTION": "Gain !M! additional Vigor when you ${modID}:Infuse [#f22424]Ignis[]."
+  },
+  "${modID}:PowderedPebble": {
+    "NAME": "Powdered Pebble",
+    "DESCRIPTION": "Gain !M! additional Block when you ${modID}:Infuse [#bf7330]Terra[]."
+  },
+  "${modID}:ClairvoyantCrosswinds": {
+    "NAME": "Clairvoyant Crosswinds",
+    "DESCRIPTION": "The first time each combat you ${modID}:Infuse [#90e2e8]Aer[], Scry 2 first."
+  },
+  "${modID}:SeepingSolvent": {
+    "NAME": "Seeping Solvent",
+    "DESCRIPTION": "The first time each turn you ${modID}:Infuse [#4f52ff]Aqua[], reduce the cost of all ${modID}:Catalysts in hand by 2."
+  },
+  "${modID}:EncroachingEarth": {
+    "NAME": "Encroaching Earth",
+    "DESCRIPTION": "The first time each combat you ${modID}:Infuse [#bf7330]Terra[], apply 2 Weak to ALL enemies."
+  },
+  "${modID}:SunderSalt": {
+    "NAME": "Sunder Salt",
+    "DESCRIPTION": "The first time each combat you ${modID}:Infuse [#f22424]Ignis[], apply 2 Vulnerable to ALL enemies."
+  },
+  "${modID}:TurbulenceTonic": {
+    "NAME": "Turbulence Tonic",
+    "DESCRIPTION": "Reduce the cost of an additional card when you ${modID}:Infuse [#90e2e8]Aer[]."
+  },
+  "${modID}:Hypothesize": {
+    "NAME": "Hypothesize",
+    "DESCRIPTION": "Scry !M!. NL ${modID}:Infuse [#90e2e8]Aer[].",
+    "UPGRADE_DESCRIPTION": "Scry !M!. NL ${modID}:Infuse [#90e2e8]Aer[]. NL ${modID}:Infuse [#4f52ff]Aqua[]."
+  },
+  "${modID}:BagBlock": {
+    "NAME": "Bag Block",
+    "DESCRIPTION": "Gain !B! Block. NL ${modID}:Infuse a random Flask twice."
+  },
+  "${modID}:SuperbSolution": {
+    "NAME": "Superb Solution",
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! additional Block for each unique Flask ${modID}:Infused this turn."
+  },
+  "${modID}:SeismicShell": {
+    "NAME": "Seismic Shell",
+    "DESCRIPTION": "${modID}:Catalyst. NL Gain !B! Block. NL At the start of your next turn, deal damage to ALL enemies equal to double your remaining Block."
+  },
+  "${modID}:MomentousMaelstrom": {
+    "NAME": "Momentous Maelstrom",
+    "DESCRIPTION": "${modID}:Catalyst. NL Draw cards until your hand is full. Gain [E] equal to your maximum [E]."
+  },
+  "${modID}:ArsonArmor": {
+    "NAME": "Arson Armor",
+    "DESCRIPTION": "Gain !B! Block. NL Whenever you take damage this turn, ${modID}:Infuse [#f22424]Ignis[]."
+  },
+  "${modID}:Brainstorm": {
+    "NAME": "Brainstorm",
+    "DESCRIPTION": "Draw !M! cards. NL Put a card from your hand on top of your draw pile. NL ${modID}:Infuse [#90e2e8]Aer[]."
+  },
+  "${modID}:BefuddlingBrew": {
+    "NAME": "Befuddling Brew",
+    "DESCRIPTION": "Gain !B! Block. NL At the start of your next turn, apply !M! Weak to ALL enemies. NL ${modID}:Withdrawal: Apply Weak this turn instead."
+  },
+  "${modID}:AlacritousArrangement": {
+    "NAME": "Alacritous Arrangement",
+    "DESCRIPTION": "Draw !M! cards. NL ${modID}:Withdrawal: Reduce the cost of ${modID}:Withdrawal cards drawn by 1 for the turn."
+  },
+  "${modID}:SneakySip": {
+    "NAME": "Sneaky Sip",
+    "DESCRIPTION": "{@@}The next {!M!|1=time|@=!M! times} you ${modID}:Infuse do{!M!|1=es} not disable ${modID}:Withdrawal effects."
+  },
+  "${modID}:Temperance": {
+    "NAME": "Temperance",
+    "DESCRIPTION": "If the top card of your draw pile costs !M! or less, play it. NL ${modID}:Withdrawal: Repeat this. NL Exhaust."
+  },
+  "${modID}:Blitzlixir": {
+    "NAME": "Blitz-lixir",
+    "DESCRIPTION": "{@@}{!M!|0=Do nothing. |repeat=${modID}:Infuse [#90e2e8]Aer[]. Draw a card. }NL Exhaust."
+  },
+  "${modID}:SturdySubstrate": {
+    "NAME": "Sturdy Substrate",
+    "DESCRIPTION": "{@@}${modID}:Infuse [#bf7330]Terra[] {!M!|2=twice|3=thrice|@=!M! times}. NL Block is not removed at the start of your next turn."
+  },
+  "${modID}:InvigoratingInfusion": {
+    "NAME": "Invigorating Infusion",
+    "DESCRIPTION": "{@@}${modID}:Infuse [#f22424]Ignis[]. NL Gain{!M!|0= nothing|repeat= [E]}."
+  },
+  "${modID}:Thermoblast": {
+    "NAME": "Thermoblast",
+    "DESCRIPTION": "{@@}Deal !D! damage. NL ${modID}:Infuse [#f22424]Ignis[]. If this kills an enemy, ${modID}:Infuse [#f22424]Ignis[] {!M!|1=again|@=!M! more times}."
+  },
+  "${modID}:VialVolley": {
+    "NAME": "Vial Volley",
+    "DESCRIPTION": "Deal !D! damage. NL Repeat for each unique Flask ${modID}:Infused this turn.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (Hits !M! times.)"
+    ]
+  },
+  "${modID}:Dissolution": {
+    "NAME": "Dissolution",
+    "DESCRIPTION": "Deal !D! damage. NL ${modID}:Withdrawal: Shuffle this card into your draw pile."
+  },
+  "${modID}:CatalyticCombustion": {
+    "NAME": "Catalytic Combustion",
+    "DESCRIPTION": "${modID}:Catalyst. NL Deal !D! damage to the closest enemy. NL If this kills an enemy, deal double the excess to the next closest."
+  },
+  "${modID}:QuicksilverBlitz": {
+    "NAME": "Quicksilver Blitz",
+    "DESCRIPTION": "${modID}:Catalyst. NL Deal !D! damage. For every !M! unblocked damage dealt, reduce the cost of a random card in your hand by 1 for the turn."
+  },
+  "${modID}:OneTwo": {
+    "NAME": "One-Two",
+    "DESCRIPTION": "Deal !D! damage. NL This Attack does not consume Vigor."
+  },
+  "${modID}:RapidsResponse": {
+    "NAME": "Rapids Response",
+    "DESCRIPTION": "{@@}Deal !D! damage. NL If you ${modID}:Infused [#4f52ff]Aqua[] this turn, gain{!M!|0= nothing|repeat= [E]}."
+  },
+  "${modID}:SuddenSurge": {
+    "NAME": "Sudden Surge",
+    "DESCRIPTION": "${modID}:Infuse [#4f52ff]Aqua[]. NL Deal damage equal to the total ${modID}:Base of the cards drawn. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Scry !M!. NL ${modID}:Infuse [#4f52ff]Aqua[]. NL Deal damage equal to the total ${modID}:Base of the cards drawn. NL Exhaust."
+  },
+  "${modID}:WhirlingDebris": {
+    "NAME": "Whirling Debris",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL If you hit at least !M! enemies, ${modID}:Infuse [#bf7330]Terra[] twice."
+  },
+  "${modID}:SubstanceSpree": {
+    "NAME": "Substance Spree",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies X times. NL ${modID}:Withdrawal: Gain half of X [E]."
+  },
+  "${modID}:FlaskFracture": {
+    "NAME": "Flask Fracture",
+    "DESCRIPTION": "Deal !D! damage. NL Your next ${modID}:Infusion this turn is cancelled."
+  },
+  "${modID}:TertiaryIngredient": {
+    "NAME": "Tertiary Ingredient",
+    "DESCRIPTION": "Can only be played as the third card of your turn. NL Deal !D! damage.",
+    "UPGRADE_DESCRIPTION": "Can only be played as the third or later card of your turn. NL Deal !D! damage.",
+    "EXTENDED_DESCRIPTION": [
+      "I haven't played enough cards.",
+      "I've played too many cards."
+    ]
+  },
+  "${modID}:BufferedSolution": {
+    "NAME": "Buffered Solution",
+    "DESCRIPTION": "The first time each combat you ${modID}:Infuse [#bf7330]Terra[] and [#4f52ff]Aqua[] in the same turn, prevent the next time you would lose HP."
+  },
+  "${modID}:OxidizingAgent": {
+    "NAME": "Oxidizing Agent",
+    "DESCRIPTION": "The first time each turn you ${modID}:Infuse [#f22424]Ignis[] and [#90e2e8]Aer[], put the lowest cost Attack from your draw pile into your hand."
+  },
+  "${modID}:BernoullisPrinciple": {
+    "NAME": "Bernoulli's Principle",
+    "DESCRIPTION": "The first time each turn you ${modID}:Infuse [#90e2e8]Aer[], ${modID}:Infuse [#4f52ff]Aqua[]."
+  },
+  "${modID}:FulminatingPhial": {
+    "NAME": "Fulminating Phial",
+    "DESCRIPTION": "When you ${modID}:Infuse [#bf7330]Terra[] or [#f22424]Ignis[], increase the effect of the other by !M! until their next ${modID}:Infusion this combat."
+  },
+  "${modID}:AcidicAcetate": {
+    "NAME": "Acidic Acetate",
+    "DESCRIPTION": "The first time each turn you ${modID}:Infuse [#4f52ff]Aqua[], gain Vigor equal to the total ${modID}:Base of the cards drawn."
+  },
+  "${modID}:EarthenEchoes": {
+    "NAME": "Earthen Echoes",
+    "DESCRIPTION": "The first time each combat you ${modID}:Infuse [#bf7330]Terra[] and [#90e2e8]Aer[] in the same turn, create a copy of the lowest cost Skill in your hand."
+  },
+  "${modID}:TeetotalRejection": {
+    "NAME": "Teetotal Rejecction",
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Weak. NL ${modID}:Withdrawal: Apply !M! Vulnerable instead.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Apply !M! Weak. NL ${modID}:Withdrawal: Apply !M! Vulnerable."
+  },
+  "${modID}:Consumption": {
+    "NAME": "Consumption",
+    "DESCRIPTION": "Deal !D! damage. NL If Fatal, increase the Vigor gained from [#f22424]Ignis[] by !M! permanently. NL Exhaust."
+  },
+  "${modID}:FlamingConclusion": {
+    "NAME": "Flaming Conclusion",
+    "DESCRIPTION": "Deal !D! damage. NL For every !M! damage dealt, ${modID}:Infuse [#f22424]Ignis[].",
+    "EXTENDED_DESCRIPTION": [
+      " NL (",
+      " times.)"
+    ]
+  },
+  "${modID}:CascadeCrush": {
+    "NAME": "Cascade Crush",
+    "DESCRIPTION": "{@@}${modID}:Infuse [#4f52ff]Aqua[] X{!M!|0=|1=+1|2=+2|@= + !M!} times. NL If the total ${modID}:Base of the cards drawn is at least 4, deal !D! damage to ALL enemies."
+  },
+  "${modID}:SackSmack": {
+    "NAME": "Sack Smack",
+    "DESCRIPTION": "Deal !D! damage. NL ${modID}:Infuse a random Flask !M! times.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Choose a Flask to ${modID}:Infuse !M! times."
+  },
+  "${modID}:Insolubility": {
+    "NAME": "Insolubility",
+    "DESCRIPTION": "Your ${modID}:Withdrawal effects trigger twice next turn. NL Draw !M! cards next turn."
+  },
+  "${modID}:EmergencyEarthworks": {
+    "NAME": "Emergency Earthworks",
+    "DESCRIPTION": "{@@}${modID}:Infuse [#bf7330]Terra[]{!M!|1=|@= !M! times}. NL ${modID}:Infuse [#bf7330]Terra[] for each enemy in combat."
+  },
+  "${modID}:Pyroclasticlysm": {
+    "NAME": "Pyroclasticlysm",
+    "DESCRIPTION": "${modID}:Catalyst. NL For 3 turns, whenever you deal unblocked attack damage gain that much Block, and whenever you gain Block, deal that much damage to a random enemy."
+  },
+  "${modID}:Crystallization": {
+    "NAME": "Crystallization",
+    "DESCRIPTION": "${modID}:Catalyst. NL Gain !B! Block for each card in your hand. NL For 3 turns, deal !M! damage to a random enemy for each damage Blocked."
+  },
+  "${modID}:Cavitation": {
+    "NAME": "Cavitation",
+    "DESCRIPTION": "${modID}:Catalyst. NL For 3 turns, whenever you draw a card, deal damage to a random enemy equal to the total ${modID}:Base of your hand."
+  },
+  "${modID}:Convection": {
+    "NAME": "Convection",
+    "DESCRIPTION": "${modID}:Catalyst. NL For 3 turns, whenever you play a card for less than its ${modID}:Base, "
+  },
+  "${modID}:Saltation": {
+    "NAME": "Saltation",
+    "DESCRIPTION": "${modID}:Catalyst. NL For 3 turns, whenever you gain Block, draw a card. NL When your hand is full, you cannot draw additional cards that turn and reduce the cost of your hand to 0 for the turn."
+  },
+  "${modID}:Effervescence": {
+    "NAME": "Effervescence",
+    "DESCRIPTION": "${modID}:Catalyst. NL Play a number of copies of the top card of your draw pile equal to this card's ${modID}:Base."
+  },
+  "${modID}:Ashes": {
+    "NAME": "Ashes",
+    "DESCRIPTION": "Gain !M! additional Vigor when you ${modID}:Infuse [#f22424]Ignis[]."
+  },
+  "${modID}:InfuseChoiceCard": {
+    "NAME": "Infusion",
+    "DESCRIPTION": "Infuses a specific Flask.",
+    "EXTENDED_DESCRIPTION": [
+      "{@@}${modID}:Infuse ",
+      " !M! time{!M!|1=|@=s}."
+    ]
+  }
+}

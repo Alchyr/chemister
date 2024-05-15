@@ -1,0 +1,42 @@
+{
+  "${modID}:ChemisterJournal": {
+    "NAME": "Chemister's Journal",
+    "FLAVOR": "flavor text",
+    "DESCRIPTIONS": [
+      "At the start of each combat, reduce the cost of a random card in your hand by 1 for the turn."
+    ]
+  },
+  "${modID}:FlaskTerra": {
+    "NAME": "Flask of Terra",
+    "FLAVOR": "flavor text",
+    "DESCRIPTIONS": [
+      "When #y${modID}:Infused, gain #b",
+      " #yBlock."
+    ]
+  },
+  "${modID}:FlaskIgnis": {
+    "NAME": "Flask of Ignis",
+    "FLAVOR": "flavor text",
+    "DESCRIPTIONS": [
+      "When #y${modID}:Infused, gain #b",
+      " #yVigor."
+    ]
+  },
+  "${modID}:FlaskAqua": {
+    "NAME": "Flask of Aqua",
+    "FLAVOR": "flavor text",
+    "DESCRIPTIONS": [
+      "When #y${modID}:Infused, draw #b",
+      " card.",
+      " cards."
+    ]
+  },
+  "${modID}:FlaskAer": {
+    "NAME": "Flask of Aer",
+    "FLAVOR": "flavor text",
+    "DESCRIPTIONS": [
+      "When #y${modID}:Infused, reduce the cost of the next card drawn by #b",
+      " for the turn."
+    ]
+  }
+}

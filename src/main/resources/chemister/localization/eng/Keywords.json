@@ -1,0 +1,34 @@
+[
+  {
+    "PROPER_NAME": "Infuse",
+    "NAMES": [
+      "infuse",
+      "infused",
+      "infused,",
+      "infusion"
+    ],
+    "DESCRIPTION": "Activate the effect of a specified #yFlask."
+  },
+  {
+    "PROPER_NAME": "Withdrawal",
+    "NAMES": [
+      "withdrawal"
+    ],
+    "DESCRIPTION": "The following effect occurs if you have not #yInfused this turn."
+  },
+  {
+    "PROPER_NAME": "Catalyst",
+    "NAMES": [
+      "catalyst",
+      "catalysts"
+    ],
+    "DESCRIPTION": "Cost is reduced by #b2 whenever you #yInfuse a #yFlask shown on the left of this card. When played, resets the cost of ALL cards with the same name. This card's cost cannot be randomized."
+  },
+  {
+    "PROPER_NAME": "Base",
+    "NAMES": [
+      "base"
+    ],
+    "DESCRIPTION": "The original cost of an unupgraded copy of a card."
+  }
+]

@@ -1,0 +1,71 @@
+{
+  "${modID}:AerPower": {
+    "NAME": "Card Discount",
+    "DESCRIPTIONS": [
+      "Reduce the cost of the next card you draw by #b",
+      "Reduce the cost of the next #b",
+      " cards you draw by #b",
+      "."
+    ]
+  },
+  "${modID}:SeismicShellPower": {
+    "NAME": "Seismic Shell",
+    "DESCRIPTIONS": [
+      "At the start of your next turn, deal damage to ALL enemies equal to #b",
+      " times your remaining #yBlock."
+    ]
+  },
+  "${modID}:ArsonArmorPower": {
+    "NAME": "Arson Armor",
+    "DESCRIPTIONS": [
+      "After taking damage this turn, #yInfuse Ignis.",
+      "For #b%s turns, after taking damage, #yInfuse Ignis."
+    ]
+  },
+  "${modID}:BefuddlingBrewPower": {
+    "NAME": "Befuddling Brew",
+    "DESCRIPTIONS": [
+      "At the start of your next turn, apply #b%d #yWeak to ALL enemies."
+    ]
+  },
+  "${modID}:SneakySipPower": {
+    "NAME": "Sneaky Sip",
+    "DESCRIPTIONS": [
+      "Your next #yInfusion does not disable #yWithdrawal effects.",
+      "Your next #b%d #yInfusions do not disable #yWithdrawal effects."
+    ]
+  },
+  "${modID}:FlaskFracturePower": {
+    "NAME": "Flask Fracture",
+    "DESCRIPTIONS": [
+      "Your next #yInfusion this turn is cancelled.",
+      "Your next #b%d #yInfusions this turn is cancelled."
+    ]
+  },
+  "${modID}:FulminatingIgnisPower": {
+    "NAME": "Fulminating Ignis",
+    "DESCRIPTIONS": [
+      "Increase the effect of your next Ignis #yInfusion by #b%d."
+    ]
+  },
+  "${modID}:FulminatingTerraPower": {
+    "NAME": "Fulminating Terra",
+    "DESCRIPTIONS": [
+      "Increase the effect of your next Terra #yInfusion by #b%d."
+    ]
+  },
+  "${modID}:DelayedInsolubilityPower": {
+    "NAME": "Saturating",
+    "DESCRIPTIONS": [
+      "Next turn, your #yWithdrawal effects occur #b1 additional time.",
+      "Next turn, your #yWithdrawal effects occur #b%d additional times."
+    ]
+  },
+  "${modID}:InsolubilityPower": {
+    "NAME": "Saturated",
+    "DESCRIPTIONS": [
+      "This turn, your #yWithdrawal effects occur #b1 additional time.",
+      "This turn, your #yWithdrawal effects occur #b%d additional times."
+    ]
+  }
+}

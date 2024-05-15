@@ -1,0 +1,143 @@
+{
+  "${modID}:Example": {
+    "TEXT": [
+      "This is",
+      "an array of Strings."
+    ],
+    "EXTRA_TEXT": [
+      "This is another",
+      "array of Strings."
+    ],
+    "TEXT_DICT": {
+      "This": "Contains pairs of Strings, used to get values based on keys.",
+      "This is a key": "This is a value."
+    }
+  },
+  "${modID}:Flasks": {
+    "TEXT": [
+      "[#f22424]Ignis[]",
+      "[#bf7330]Terra[]",
+      "[#4f52ff]Aqua[]",
+      "[#90e2e8]Aer[]"
+    ]
+  },
+  "${modID}:TemporaryCard": {
+    "TEXT": [
+      " NL (Lasts %d combats.)"
+    ]
+  },
+  "${modID}:ReagentType": {
+    "TEXT": [
+      "Reagent"
+    ]
+  },
+  "${modID}:TidalTincture": {
+    "TEXT": [
+      "Tidal Tincture",
+      "The first #yInfusion each combat draws #b1 additional card.",
+      "The first #b%d #yInfusions each combat draws #b1 additional card."
+    ]
+  },
+  "${modID}:SearingSulfur": {
+    "TEXT": [
+      "Searing Sulfur",
+      "Effect increased by #b%d."
+    ]
+  },
+  "${modID}:PowderedPebble": {
+    "TEXT": [
+      "Powdered Pebble",
+      "Effect increased by #b%d."
+    ]
+  },
+  "${modID}:ClairvoyantCrosswinds": {
+    "TEXT": [
+      "Clairvoyant Crosswinds",
+      "Before the first #yInfusion each combat, #yScry #b2.",
+      "Before the first #b%d #yInfusions each combat, #yScry #b2."
+    ]
+  },
+  "${modID}:SeepingSolvent": {
+    "TEXT": [
+      "Seeping Solvent",
+      "The first time you #yInfuse each turn, reduce the cost of all #yCatalysts in hand by #b2.",
+      "The first #b%d times you #yInfuse each turn, reduce the cost of all #yCatalysts in hand by #b2."
+    ]
+  },
+  "${modID}:EncroachingEarth": {
+    "TEXT": [
+      "Encroaching Earth",
+      "The first time you #yInfuse each combat, apply #b2 #yWeak to ALL enemies.",
+      "The first #b%d times you #yInfuse each combat, apply #b2 #yWeak to ALL enemies."
+    ]
+  },
+  "${modID}:SunderSalt": {
+    "TEXT": [
+      "Sunder Salt",
+      "The first time you #yInfuse each combat, apply #b2 #yVulnerable to ALL enemies.",
+      "The first #b%d times you #yInfuse each combat, apply #b2 #yVulnerable to ALL enemies."
+    ]
+  },
+  "${modID}:TurbulenceTonic": {
+    "TEXT": [
+      "Turbulence Tonic",
+      "Affects #b1 additional card.",
+      "Affects #b%d additional cards."
+    ]
+  },
+  "${modID}:BufferedSolution": {
+    "TEXT": [
+      "Buffered Solution",
+      "The first time you #yInfuse Terra and Aqua in the same turn, prevent the next time you would lose HP.",
+      "The first #b%d times you #yInfuse Terra and Aqua in the same turn, prevent the next time you would lose HP."
+    ]
+  },
+  "${modID}:OxidizingAgent": {
+    "TEXT": [
+      "Oxidizing Agent",
+      "The first time you #yInfuse Ignis and Aer each turn, put the lowest cost Attack from your draw pile into your hand.",
+      "The first #b%d times you #yInfuse Ignis and Aer each turn, put the lowest cost Attack from your draw pile into your hand."
+    ]
+  },
+  "${modID}:EarthenEchoes": {
+    "TEXT": [
+      "Earthen Echoes",
+      "The first time you #yInfuse Terra and Aqua in the same turn, create a copy of the lowest cost Skill in your hand.",
+      "The first #b%d times you #yInfuse Terra and Aqua in the same turn, create a copy of the lowest cost Skill in your hand."
+    ]
+  },
+  "${modID}:BernoullisPrinciple": {
+    "TEXT": [
+      "Bernoulli's Principle",
+      "The first time you #yInfuse each turn, #yInfuse Aqua.",
+      "The first #b%d times you #yInfuse each turn, #yInfuse Aqua."
+    ]
+  },
+  "${modID}:FulminatingPhial": {
+    "TEXT": [
+      "Fulminating Phial",
+      "When #yInfused, increase the effects of #yIgnis by #b%d until its next #yInfusion.",
+      "When #yInfused, increase the effects of #yTerra by #b%d until its next #yInfusion."
+    ]
+  },
+  "${modID}:AcidicAcetate": {
+    "TEXT": [
+      "Acidic Acetate",
+      "The first time you #yInfuse each turn, gain #yVigor equal to the total #yBase of the cards drawn.",
+      "The first #b%d times you #yInfuse each turn, gain #yVigor equal to the total #yBase of the cards drawn."
+    ]
+  },
+  "${modID}:Ashes": {
+    "TEXT": [
+      "Ashes",
+      "Effect increased by #b%d."
+    ]
+  },
+  "${modID}:a": {
+    "TEXT": [
+      "a",
+      "",
+      ""
+    ]
+  }
+}
