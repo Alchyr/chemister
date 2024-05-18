@@ -2,16 +2,13 @@ package chemister.relics.starter;
 
 import chemister.actions.infuse.DisplayableAction;
 import chemister.actions.infuse.PowerDisplayAction;
-import chemister.cards.AugmentCard;
-import chemister.cards.InfuseCard;
+import chemister.cards.ReagentCard;
 import chemister.cards.uncommon.TurbulenceTonic;
 import chemister.character.Chemister;
 import chemister.infuse.FlaskBaseEffect;
 import chemister.infuse.InfuseEffect;
 import chemister.powers.AerPower;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 
 import static chemister.ChemisterMod.makeID;
 
@@ -23,7 +20,7 @@ public class FlaskAer extends FlaskRelic {
         @Override
         public DisplayableAction createAction(int amt) {
             int times = 1;
-            for (AugmentCard.AugmentEffect effect : FlaskAer.this.augmentEffects) {
+            for (ReagentCard.ReagentEffect effect : FlaskAer.this.reagentEffects) {
                 if (effect.ID.equals(TurbulenceTonic.ID)) {
                     times += effect.maxAmount;
                 }

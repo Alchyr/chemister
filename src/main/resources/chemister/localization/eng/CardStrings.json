@@ -313,27 +313,27 @@
   },
   "${modID}:Pyroclasticlysm": {
     "NAME": "Pyroclasticlysm",
-    "DESCRIPTION": "${modID}:Catalyst. NL For 3 turns, whenever you deal unblocked attack damage gain that much Block, and whenever you gain Block, deal that much damage to a random enemy."
+    "DESCRIPTION": "${modID}:Catalyst. NL For !M! turns, whenever you deal unblocked attack damage gain that much Block, and whenever you gain Block, deal that much damage to a random enemy."
   },
   "${modID}:Crystallization": {
     "NAME": "Crystallization",
-    "DESCRIPTION": "${modID}:Catalyst. NL Gain !B! Block for each card in your hand. NL For 3 turns, deal !M! damage to a random enemy for each damage Blocked."
+    "DESCRIPTION": "${modID}:Catalyst. NL Gain !B! Block for each card in your hand. NL For !M! turns, whenever you Block damage, deal twice as much to a random enemy."
   },
   "${modID}:Cavitation": {
     "NAME": "Cavitation",
-    "DESCRIPTION": "${modID}:Catalyst. NL For 3 turns, whenever you draw a card, deal damage to a random enemy equal to the total ${modID}:Base of your hand."
+    "DESCRIPTION": "${modID}:Catalyst. NL For !M! turns, whenever you draw a card, deal damage to a random enemy equal to the total ${modID}:Base of your hand."
   },
   "${modID}:Convection": {
     "NAME": "Convection",
-    "DESCRIPTION": "${modID}:Catalyst. NL For 3 turns, whenever you play a card for less than its ${modID}:Base, "
+    "DESCRIPTION": "${modID}:Catalyst. NL For !M! turns, whenever you play a card for less than its ${modID}:Base, play a copy of it."
   },
   "${modID}:Saltation": {
     "NAME": "Saltation",
-    "DESCRIPTION": "${modID}:Catalyst. NL For 3 turns, whenever you gain Block, draw a card. NL When your hand is full, you cannot draw additional cards that turn and reduce the cost of your hand to 0 for the turn."
+    "DESCRIPTION": "${modID}:Catalyst. NL For !M! turns, whenever you gain Block, draw a card. NL When your hand is full, reduce the cost of your hand to 0 for the turn and become unable to draw additional cards for the turn."
   },
   "${modID}:Effervescence": {
     "NAME": "Effervescence",
-    "DESCRIPTION": "${modID}:Catalyst. NL Play a number of copies of the top card of your draw pile equal to this card's ${modID}:Base."
+    "DESCRIPTION": "${modID}:Catalyst. NL Play copies of the top card of your draw pile equal to this card's ${modID}:Base."
   },
   "${modID}:Ashes": {
     "NAME": "Ashes",

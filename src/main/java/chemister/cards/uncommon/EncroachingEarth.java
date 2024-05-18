@@ -4,7 +4,7 @@ import basemod.helpers.CardModifierManager;
 import chemister.actions.infuse.ApplyPowerToAllEnemiesDisplayAction;
 import chemister.actions.infuse.DisplayableAction;
 import chemister.cardmods.TemporaryCardmod;
-import chemister.cards.AugmentCard;
+import chemister.cards.ReagentCard;
 import chemister.character.Chemister;
 import chemister.relics.starter.FlaskRelic;
 import chemister.util.CardStats;
@@ -15,7 +15,7 @@ import com.megacrit.cardcrawl.powers.WeakPower;
 
 import java.util.List;
 
-public class EncroachingEarth extends AugmentCard {
+public class EncroachingEarth extends ReagentCard {
     public static final String ID = makeID(EncroachingEarth.class.getSimpleName());
     private static final CardStats info = new CardStats(
             Chemister.Meta.CARD_COLOR,
@@ -36,19 +36,14 @@ public class EncroachingEarth extends AugmentCard {
     }
 
     @Override
-    public boolean canUpgrade() {
-        return false;
-    }
-
-    @Override
     public Chemister.Flasks[] getFlasks() {
         return flasks;
     }
 
     @Override
-    public AugmentEffect getEffect(FlaskRelic flask) {
+    public ReagentEffect getEffect(FlaskRelic flask) {
         if (flask.flaskType() == Chemister.Flasks.TERRA) {
-            return new AugmentEffect(ID, 1, 1) {
+            return new ReagentEffect(ID, 1, 1) {
                 @Override
                 protected int getAmount(int infusedCount, List<Chemister.Flasks> infusedThisTurn, List<List<Chemister.Flasks>> infusedThisCombat) {
                     return maxAmount - GeneralUtils.countLayered(infusedThisCombat, Chemister.Flasks.TERRA);

@@ -28,6 +28,13 @@
       "At the start of your next turn, apply #b%d #yWeak to ALL enemies."
     ]
   },
+  "${modID}:DilutionPower": {
+    "NAME": "Dilution",
+    "DESCRIPTIONS": [
+      "Your #yWithdrawal effects ignore #yInfusions this turn.",
+      "Your #yWithdrawal effects ignore #yInfusions for #b%d turns."
+    ]
+  },
   "${modID}:SneakySipPower": {
     "NAME": "Sneaky Sip",
     "DESCRIPTIONS": [
@@ -66,6 +73,41 @@
     "DESCRIPTIONS": [
       "This turn, your #yWithdrawal effects occur #b1 additional time.",
       "This turn, your #yWithdrawal effects occur #b%d additional times."
+    ]
+  },
+  "${modID}:PyroclasticlysmPower": {
+    "NAME": "Pyroclasticlysm",
+    "DESCRIPTIONS": [
+      "This turn, whenever you deal unblocked attack damage gain that much #yBlock, and whenever you gain #yBlock, deal that much damage to a random enemy.",
+      "For #b%d turns, whenever you deal unblocked attack damage gain that much #yBlock, and whenever you gain #yBlock, deal that much damage to a random enemy."
+    ]
+  },
+  "${modID}:CrystallizationPower": {
+    "NAME": "Crystallization",
+    "DESCRIPTIONS": [
+      "This turn, whenever you #yBlock damage, deal twice as much to a random enemy.",
+      "For #b%d turns, whenever you #yBlock damage, deal twice as much to a random enemy."
+    ]
+  },
+  "${modID}:CavitationPower": {
+    "NAME": "Cavitation",
+    "DESCRIPTIONS": [
+      "This turn, whenever you draw a card, deal damage to a random enemy equal to the total #yBase of your hand.",
+      "For #b%d turns, whenever you draw a card, deal damage to a random enemy equal to the total #yBase of your hand."
+    ]
+  },
+  "${modID}:ConvectionPower": {
+    "NAME": "Convection",
+    "DESCRIPTIONS": [
+      "This turn, whenever you play a card for less than its #yBase, play a copy of it.",
+      "For #b%d turns, whenever you play a card for less than its #yBase, play a copy of it."
+    ]
+  },
+  "${modID}:SaltationPower": {
+    "NAME": "Saltation",
+    "DESCRIPTIONS": [
+      "This turn, whenever you gain #yBlock, draw a card.\n\nWhen your hand is full, reduce the cost of your hand to 0 for the turn and become unable to draw additional cards for the turn.",
+      "For #b%d turns, whenever you gain #yBlock, draw a card.\n\nWhen your hand is full, reduce the cost of your hand to 0 for the turn and become unable to draw additional cards for the turn."
     ]
   }
 }

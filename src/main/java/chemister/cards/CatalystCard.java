@@ -51,6 +51,7 @@ public abstract class CatalystCard extends BaseCard {
 
     @Override
     protected void upgradeBaseCost(int newBaseCost) {
+        if (newBaseCost < 0) newBaseCost = 0;
         super.upgradeBaseCost(newBaseCost);
         baseCost = newBaseCost;
     }

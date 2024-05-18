@@ -30,7 +30,7 @@ public class NoRandomCostPatch {
         private static final Map<AbstractCard, Integer> origCosts = new HashMap<>();
 
         @SpirePrefixPatch
-        public static void TempRemove(RandomizeHandCostAction __instance) {
+        public static void tempRemove(RandomizeHandCostAction __instance) {
             origCosts.clear();
             for (AbstractCard c : AbstractDungeon.player.hand.group) {
                 if (c instanceof CatalystCard) {
@@ -41,7 +41,7 @@ public class NoRandomCostPatch {
         }
 
         @SpirePostfixPatch
-        public static void Reset(RandomizeHandCostAction __instance) {
+        public static void reset(RandomizeHandCostAction __instance) {
             for (Map.Entry<AbstractCard, Integer> card : origCosts.entrySet()) {
                 card.getKey().cost = card.getValue();
             }

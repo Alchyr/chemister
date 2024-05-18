@@ -1,13 +1,13 @@
 package chemister.cards.uncommon;
 
 import chemister.actions.infuse.DisplayableAction;
-import chemister.cards.AugmentCard;
+import chemister.cards.ReagentCard;
 import chemister.character.Chemister;
 import chemister.relics.starter.FlaskRelic;
 import chemister.util.CardStats;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 
-public class PowderedPebble extends AugmentCard {
+public class PowderedPebble extends ReagentCard {
     public static final String ID = makeID(PowderedPebble.class.getSimpleName());
     private static final CardStats info = new CardStats(
             Chemister.Meta.CARD_COLOR,
@@ -28,20 +28,15 @@ public class PowderedPebble extends AugmentCard {
     }
 
     @Override
-    public boolean canUpgrade() {
-        return false;
-    }
-
-    @Override
     public Chemister.Flasks[] getFlasks() {
         return flasks;
     }
 
     @Override
-    public AugmentEffect getEffect(FlaskRelic flask) {
+    public ReagentEffect getEffect(FlaskRelic flask) {
         if (flask.flaskType() == Chemister.Flasks.TERRA) {
             flask.counter += magicNumber;
-            return new AugmentEffect(ID, -1, magicNumber) {
+            return new ReagentEffect(ID, -1, magicNumber) {
                 @Override
                 public DisplayableAction createAction(int amt) {
                     return null;

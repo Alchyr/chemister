@@ -1,11 +1,8 @@
 package chemister.cards.rare;
 
-import basemod.helpers.CardModifierManager;
-import chemister.actions.infuse.CatalystDiscountDisplayAction;
 import chemister.actions.infuse.DisplayableAction;
 import chemister.actions.infuse.InfuseAction;
-import chemister.cardmods.TemporaryCardmod;
-import chemister.cards.AugmentCard;
+import chemister.cards.ReagentCard;
 import chemister.character.Chemister;
 import chemister.relics.starter.FlaskRelic;
 import chemister.util.CardStats;
@@ -14,7 +11,7 @@ import com.megacrit.cardcrawl.helpers.PowerTip;
 
 import java.util.List;
 
-public class BernoullisPrinciple extends AugmentCard {
+public class BernoullisPrinciple extends ReagentCard {
     public static final String ID = makeID(BernoullisPrinciple.class.getSimpleName());
     private static final CardStats info = new CardStats(
             Chemister.Meta.CARD_COLOR,
@@ -33,19 +30,14 @@ public class BernoullisPrinciple extends AugmentCard {
     }
 
     @Override
-    public boolean canUpgrade() {
-        return false;
-    }
-
-    @Override
     public Chemister.Flasks[] getFlasks() {
         return flasks;
     }
 
     @Override
-    public AugmentEffect getEffect(FlaskRelic flask) {
+    public ReagentEffect getEffect(FlaskRelic flask) {
         if (flask.flaskType() == Chemister.Flasks.AER) {
-            return new AugmentEffect(ID, 10, 1) {
+            return new ReagentEffect(ID, 10, 1) {
                 @Override
                 protected int getAmount(int infusedCount, List<Chemister.Flasks> infusedThisTurn, List<List<Chemister.Flasks>> infusedThisCombat) {
                     return maxAmount - GeneralUtils.count(infusedThisTurn, Chemister.Flasks.AER);

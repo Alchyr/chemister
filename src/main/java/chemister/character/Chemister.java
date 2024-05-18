@@ -9,24 +9,21 @@ import chemister.cards.basic.FuturesightFumes;
 import chemister.cards.basic.LavaSpill;
 import chemister.cards.basic.Strike;
 import chemister.relics.starter.*;
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.blue.Defend_Blue;
-import com.megacrit.cardcrawl.cards.green.Neutralize;
-import com.megacrit.cardcrawl.cards.red.Strike_Red;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
-import com.megacrit.cardcrawl.relics.BurningBlood;
+import com.megacrit.cardcrawl.relics.*;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 
 import java.util.ArrayList;
@@ -149,6 +146,17 @@ public class Chemister extends CustomPlayer {
         retVal.add(FlaskAer.ID);
 
         return retVal;
+    }
+
+    @Override
+    protected void initializeStarterRelics(PlayerClass chosenClass) {
+        super.initializeStarterRelics(chosenClass);
+
+        AbstractDungeon.relicsToRemoveOnStart.add(MummifiedHand.ID);
+        AbstractDungeon.relicsToRemoveOnStart.add(BottledTornado.ID);
+        AbstractDungeon.relicsToRemoveOnStart.add(OrangePellets.ID);
+        AbstractDungeon.relicsToRemoveOnStart.add(FrozenEgg2.ID);
+        AbstractDungeon.relicsToRemoveOnStart.add(BirdFacedUrn.ID);
     }
 
     @Override

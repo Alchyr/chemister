@@ -27,7 +27,7 @@ public class AlacritousArrangement extends WithdrawalCard {
 
     @Override
     public float getTitleFontSize() {
-        return 20f;
+        return 18f;
     }
 
     @Override

@@ -81,6 +81,6 @@ public class InfuseChoiceCard extends BaseCard implements InfuseCard {
 
     @Override
     public Chemister.Flasks[] getFlasks() {
-        return Chemister.Flasks.values();
+        return flask;
     }
 }

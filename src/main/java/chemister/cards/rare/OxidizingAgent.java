@@ -2,19 +2,16 @@ package chemister.cards.rare;
 
 import chemister.actions.infuse.AddAttackDisplayAction;
 import chemister.actions.infuse.DisplayableAction;
-import chemister.actions.infuse.PowerDisplayAction;
-import chemister.cards.AugmentCard;
+import chemister.cards.ReagentCard;
 import chemister.character.Chemister;
 import chemister.relics.starter.FlaskRelic;
 import chemister.util.CardStats;
 import chemister.util.GeneralUtils;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.PowerTip;
-import com.megacrit.cardcrawl.powers.BufferPower;
 
 import java.util.List;
 
-public class OxidizingAgent extends AugmentCard {
+public class OxidizingAgent extends ReagentCard {
     public static final String ID = makeID(OxidizingAgent.class.getSimpleName());
     private static final CardStats info = new CardStats(
             Chemister.Meta.CARD_COLOR,
@@ -34,19 +31,14 @@ public class OxidizingAgent extends AugmentCard {
     }
 
     @Override
-    public boolean canUpgrade() {
-        return false;
-    }
-
-    @Override
     public Chemister.Flasks[] getFlasks() {
         return flasks;
     }
 
     @Override
-    public AugmentEffect getEffect(FlaskRelic flask) {
+    public ReagentEffect getEffect(FlaskRelic flask) {
         if (GeneralUtils.arrContains(flasks, flask.flaskType())) {
-            return new AugmentEffect(ID, 8, 1) {
+            return new ReagentEffect(ID, 8, 1) {
                 @Override
                 protected int getAmount(int infusedCount, List<Chemister.Flasks> infusedThisTurn, List<List<Chemister.Flasks>> infusedThisCombat) {
                     //Man this is gross, but I'm not rewriting this system

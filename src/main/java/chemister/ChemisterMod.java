@@ -6,6 +6,7 @@ import basemod.interfaces.*;
 import chemister.cards.BaseCard;
 import chemister.cards.CatalystCard;
 import chemister.character.Chemister;
+import chemister.potions.BasePotion;
 import chemister.relics.BaseRelic;
 import chemister.relics.starter.FlaskRelic;
 import chemister.util.GeneralUtils;
@@ -113,6 +114,14 @@ public class ChemisterMod implements
         }
     }
 
+    public static void registerPotions() {
+        new AutoAdd(modID)
+                .packageFilter(BasePotion.class)
+                .any(BasePotion.class, (info, potion) -> {
+                    BaseMod.addPotion(potion.getClass(), null, null, null, potion.ID, potion.playerClass);
+                });
+    }
+
     @Override
     public void receiveEditCharacters() {
         Chemister.Meta.registerCharacter();
@@ -120,6 +129,8 @@ public class ChemisterMod implements
 
     @Override
     public void receivePostInitialize() {
+        registerPotions();
+
         //This loads the image used as an icon in the in-game mods menu.
         Texture badgeTexture = TextureLoader.getTexture(imagePath("badge.png"));
         //Set up the mod information displayed in the in-game mods menu.

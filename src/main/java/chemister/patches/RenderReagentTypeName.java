@@ -2,7 +2,7 @@ package chemister.patches;
 
 import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.RenderCardDescriptors;
 import basemod.patches.com.megacrit.cardcrawl.screens.SingleCardViewPopup.RenderCardDescriptorsSCV;
-import chemister.cards.AugmentCard;
+import chemister.cards.ReagentCard;
 import com.badlogic.gdx.graphics.g2d.GlyphLayout;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.lib.ByRef;
@@ -30,7 +30,7 @@ public class RenderReagentTypeName {
                 localvars = { "text" }
         )
         public static void changeText(AbstractCard __instance, SpriteBatch sb, @ByRef String[] text) {
-            if (__instance instanceof AugmentCard) {
+            if (__instance instanceof ReagentCard) {
                 text[0] = TEXT;
             }
         }
@@ -46,7 +46,7 @@ public class RenderReagentTypeName {
                 localvars = { "label" }
         )
         public static void changeText(SingleCardViewPopup __instance, SpriteBatch sb, AbstractCard ___card, @ByRef String[] label) {
-            if (___card instanceof AugmentCard) {
+            if (___card instanceof ReagentCard) {
                 label[0] = TEXT;
             }
         }
@@ -62,7 +62,7 @@ public class RenderReagentTypeName {
                 localvars = { "typeText" }
         )
         public static void changeText(AbstractCard __instance, SpriteBatch sb, float x, float y, float[] tOffset, float[] tWidth, @ByRef String[] typeText) {
-            if (__instance instanceof AugmentCard) {
+            if (__instance instanceof ReagentCard) {
                 typeText[0] = TEXT;
 
                 gl.reset();
@@ -84,7 +84,7 @@ public class RenderReagentTypeName {
                 localvars = { "typeText" }
         )
         public static void changeText(SingleCardViewPopup __instance, SpriteBatch sb, AbstractCard ___card, float[] tOffset, float[] tWidth, @ByRef String[] typeText) {
-            if (___card instanceof AugmentCard) {
+            if (___card instanceof ReagentCard) {
                 typeText[0] = TEXT;
 
                 gl.reset();

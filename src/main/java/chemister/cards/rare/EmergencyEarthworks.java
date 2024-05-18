@@ -31,7 +31,7 @@ public class EmergencyEarthworks extends BaseCard implements InfuseCard {
 
     @Override
     public float getTitleFontSize() {
-        return 20f;
+        return 18f;
     }
 
     @Override

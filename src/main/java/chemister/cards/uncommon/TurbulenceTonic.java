@@ -3,16 +3,13 @@ package chemister.cards.uncommon;
 import basemod.helpers.CardModifierManager;
 import chemister.actions.infuse.DisplayableAction;
 import chemister.cardmods.TemporaryCardmod;
-import chemister.cards.AugmentCard;
+import chemister.cards.ReagentCard;
 import chemister.character.Chemister;
 import chemister.relics.starter.FlaskRelic;
 import chemister.util.CardStats;
-import chemister.util.GeneralUtils;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 
-import java.util.List;
-
-public class TurbulenceTonic extends AugmentCard {
+public class TurbulenceTonic extends ReagentCard {
     public static final String ID = makeID(TurbulenceTonic.class.getSimpleName());
     private static final CardStats info = new CardStats(
             Chemister.Meta.CARD_COLOR,
@@ -33,19 +30,14 @@ public class TurbulenceTonic extends AugmentCard {
     }
 
     @Override
-    public boolean canUpgrade() {
-        return false;
-    }
-
-    @Override
     public Chemister.Flasks[] getFlasks() {
         return flasks;
     }
 
     @Override
-    public AugmentEffect getEffect(FlaskRelic flask) {
+    public ReagentEffect getEffect(FlaskRelic flask) {
         if (flask.flaskType() == Chemister.Flasks.AER) {
-            return new AugmentEffect(ID, -1, 1) {
+            return new ReagentEffect(ID, -1, 1) {
                 @Override
                 public DisplayableAction createAction(int amt) {
                     return null;

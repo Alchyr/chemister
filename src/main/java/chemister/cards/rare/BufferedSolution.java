@@ -2,7 +2,7 @@ package chemister.cards.rare;
 
 import chemister.actions.infuse.DisplayableAction;
 import chemister.actions.infuse.PowerDisplayAction;
-import chemister.cards.AugmentCard;
+import chemister.cards.ReagentCard;
 import chemister.character.Chemister;
 import chemister.relics.starter.FlaskRelic;
 import chemister.util.CardStats;
@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.powers.BufferPower;
 
 import java.util.List;
 
-public class BufferedSolution extends AugmentCard {
+public class BufferedSolution extends ReagentCard {
     public static final String ID = makeID(BufferedSolution.class.getSimpleName());
     private static final CardStats info = new CardStats(
             Chemister.Meta.CARD_COLOR,
@@ -33,19 +33,14 @@ public class BufferedSolution extends AugmentCard {
     }
 
     @Override
-    public boolean canUpgrade() {
-        return false;
-    }
-
-    @Override
     public Chemister.Flasks[] getFlasks() {
         return flasks;
     }
 
     @Override
-    public AugmentEffect getEffect(FlaskRelic flask) {
+    public ReagentEffect getEffect(FlaskRelic flask) {
         if (GeneralUtils.arrContains(flasks, flask.flaskType())) {
-            return new AugmentEffect(ID, 5, 1) {
+            return new ReagentEffect(ID, 5, 1) {
                 @Override
                 protected int getAmount(int infusedCount, List<Chemister.Flasks> infusedThisTurn, List<List<Chemister.Flasks>> infusedThisCombat) {
                     //Man this is gross, but I'm not rewriting this system

@@ -1,12 +1,22 @@
 {
-  "${modID}:PotionID": {
-    "NAME": "Some Kind of Potion",
+  "${modID}:DilutionSolution": {
+    "NAME": "Dilution Solution",
     "DESCRIPTIONS": [
-      "Little",
-      " pieces ",
-      "that get put together",
-      " into a description.",
-      " Exactly how depends on the potion, and you can set it up however you want."
+      "This turn, #yWithdrawal activates even if you have #yInfused. ",
+      "Choose #b1 of #b3 random #yWithdrawal cards to add to your hand, it costs #b0 this turn.",
+      "Choose #b1 of #b3 random #yWithdrawal cards and add #b%d copies to your hand, they costs #b0 this turn."
+    ]
+  },
+  "${modID}:Duplixir": {
+    "NAME": "Duplixir",
+    "DESCRIPTIONS": [
+      "Obtain a temporary copy that lasts #b%d combats of the last #yReagent added to your deck."
+    ]
+  },
+  "${modID}:DoubleDose": {
+    "NAME": "Double Dose",
+    "DESCRIPTIONS": [
+      "Choose a #yFlask and #yInfuse it #b%d times."
     ]
   }
 }

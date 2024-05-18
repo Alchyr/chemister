@@ -8,8 +8,8 @@ import chemister.character.Chemister;
 import chemister.util.CardStats;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.EmptyDeckShuffleAction;
 import com.megacrit.cardcrawl.actions.utility.ScryAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -44,10 +44,15 @@ public class FuturesightFumes extends BaseCard implements InfuseCard {
             public void update() {
                 isDone = true;
                 if (AbstractDungeon.player.drawPile.isEmpty()) {
-                    return;
+                    addToTop(new EmptyDeckShuffleAction());
                 }
-                AbstractCard top = AbstractDungeon.player.drawPile.getTopCard();
-                if (top != null && ChemisterMod.getCardBase(top) >= 2) {
+            }
+        });
+        addToBot(new AbstractGameAction() {
+            @Override
+            public void update() {
+                isDone = true;
+                if (!AbstractDungeon.player.drawPile.isEmpty() && ChemisterMod.getCardBase(AbstractDungeon.player.drawPile.getTopCard()) >= 2) {
                     addToTop(new InfuseAction(Chemister.Flasks.AER));
                 }
                 else {

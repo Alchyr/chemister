@@ -1,13 +1,9 @@
 package chemister.cards.rare;
 
-import chemister.cards.BaseCard;
-import chemister.cards.InfuseCard;
 import chemister.cards.WithdrawalCard;
 import chemister.character.Chemister;
 import chemister.util.CardStats;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.PutOnDeckAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -25,7 +21,7 @@ public class TeetotalRejection extends WithdrawalCard {
     public TeetotalRejection() {
         super(ID, info);
 
-        setDamage(14);
+        setDamage(12);
         setMagic(2);
     }
 

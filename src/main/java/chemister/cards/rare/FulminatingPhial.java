@@ -1,23 +1,19 @@
 package chemister.cards.rare;
 
-import basemod.helpers.CardModifierManager;
 import chemister.actions.infuse.DisplayableAction;
-import chemister.actions.infuse.InfuseAction;
 import chemister.actions.infuse.PowerDisplayAction;
-import chemister.cardmods.TemporaryCardmod;
-import chemister.cards.AugmentCard;
+import chemister.cards.ReagentCard;
 import chemister.character.Chemister;
 import chemister.powers.FulminatingIgnisPower;
 import chemister.powers.FulminatingTerraPower;
 import chemister.relics.starter.FlaskRelic;
 import chemister.util.CardStats;
-import chemister.util.GeneralUtils;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 
 import java.util.List;
 
-public class FulminatingPhial extends AugmentCard {
+public class FulminatingPhial extends ReagentCard {
     public static final String ID = makeID(FulminatingPhial.class.getSimpleName());
     private static final CardStats info = new CardStats(
             Chemister.Meta.CARD_COLOR,
@@ -39,19 +35,14 @@ public class FulminatingPhial extends AugmentCard {
     }
 
     @Override
-    public boolean canUpgrade() {
-        return false;
-    }
-
-    @Override
     public Chemister.Flasks[] getFlasks() {
         return flasks;
     }
 
     @Override
-    public AugmentEffect getEffect(FlaskRelic flask) {
+    public ReagentEffect getEffect(FlaskRelic flask) {
         if (flask.flaskType() == Chemister.Flasks.TERRA) {
-            return new AugmentEffect(ID, 99, magicNumber) {
+            return new ReagentEffect(ID, 99, magicNumber) {
                 @Override
                 protected int getAmount(int infusedCount, List<Chemister.Flasks> infusedThisTurn, List<List<Chemister.Flasks>> infusedThisCombat) {
                     return maxAmount;
@@ -70,7 +61,7 @@ public class FulminatingPhial extends AugmentCard {
             };
         }
         else if (flask.flaskType() == Chemister.Flasks.IGNIS) {
-            return new AugmentEffect(ID, 99, magicNumber) {
+            return new ReagentEffect(ID, 99, magicNumber) {
                 @Override
                 protected int getAmount(int infusedCount, List<Chemister.Flasks> infusedThisTurn, List<List<Chemister.Flasks>> infusedThisCombat) {
                     return maxAmount;

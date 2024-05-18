@@ -3,7 +3,7 @@ package chemister.relics.starter;
 import chemister.ChemisterMod;
 import chemister.actions.infuse.DisplayableAction;
 import chemister.cards.InfuseCard;
-import chemister.cards.AugmentCard;
+import chemister.cards.ReagentCard;
 import chemister.character.Chemister;
 import chemister.infuse.InfuseEffect;
 import chemister.relics.BaseRelic;
@@ -87,8 +87,8 @@ public abstract class FlaskRelic extends BaseRelic {
     }
 
     protected final List<PowerTip> reagentTips = new ArrayList<>();
-    protected final List<AugmentCard.AugmentEffect> augmentEffects = new ArrayList<>();
-    protected final List<InfuseEffect> infuseEffects = new ArrayList<>(); //Slightly different as augmentEffects is more for tooltip purposes.
+    protected final List<ReagentCard.ReagentEffect> reagentEffects = new ArrayList<>();
+    protected final List<InfuseEffect> infuseEffects = new ArrayList<>(); //Slightly different as reagentEffects is more for tooltip purposes.
     public void updateFlask() {
         //Called when master deck changes/on initialization.
         //Not intended for "active" changes.
@@ -97,22 +97,22 @@ public abstract class FlaskRelic extends BaseRelic {
             resetCounter();
             tips.removeAll(reagentTips);
             reagentTips.clear();
-            this.augmentEffects.clear();
+            this.reagentEffects.clear();
 
-            Map<String, AugmentCard.AugmentEffect> reagentEffects = new HashMap<>();
+            Map<String, ReagentCard.ReagentEffect> reagentEffects = new HashMap<>();
 
             for (AbstractCard c : AbstractDungeon.player.masterDeck.group) {
-                if (c instanceof AugmentCard) {
-                    AugmentCard.AugmentEffect effect = ((AugmentCard) c).getEffect(this);
+                if (c instanceof ReagentCard) {
+                    ReagentCard.ReagentEffect effect = ((ReagentCard) c).getEffect(this);
                     if (effect != null) {
-                        reagentEffects.merge(effect.ID, effect, AugmentCard.AugmentEffect::merge);
+                        reagentEffects.merge(effect.ID, effect, ReagentCard.ReagentEffect::merge);
                     }
                 }
             }
 
-            this.augmentEffects.addAll(reagentEffects.values());
-            this.augmentEffects.sort(Comparator.comparingInt((effect)->effect.priority));
-            for (AugmentCard.AugmentEffect effect : this.augmentEffects) {
+            this.reagentEffects.addAll(reagentEffects.values());
+            this.reagentEffects.sort(Comparator.comparingInt((effect)->effect.priority));
+            for (ReagentCard.ReagentEffect effect : this.reagentEffects) {
                 PowerTip tip = effect.getTip();
                 if (tip != null) {
                     reagentTips.add(tip);
@@ -132,14 +132,14 @@ public abstract class FlaskRelic extends BaseRelic {
         if (baseEffect != null) infuseEffects.add(getBaseEffect());
 
         outer:
-        for (AugmentCard.AugmentEffect augmentEffect : augmentEffects) {
+        for (ReagentCard.ReagentEffect reagentEffect : reagentEffects) {
             for (InfuseEffect effect : infuseEffects) { //Merge if already existing
-                if (effect.ID.equals(augmentEffect.ID)) {
-                    effect.merge(augmentEffect);
+                if (effect.ID.equals(reagentEffect.ID)) {
+                    effect.merge(reagentEffect);
                     continue outer;
                 }
             } //Otherwise add
-            infuseEffects.add(augmentEffect);
+            infuseEffects.add(reagentEffect);
         }
 
         infuseEffects.sort(Comparator.comparingInt((effect)->effect.priority));

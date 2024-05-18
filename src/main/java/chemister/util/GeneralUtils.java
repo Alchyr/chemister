@@ -1,12 +1,14 @@
 package chemister.util;
 
-import chemister.character.Chemister;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
 import java.util.*;
 import java.util.function.Consumer;
+import java.util.function.Predicate;
 
 public class GeneralUtils {
     public static String arrToString(Object[] arr) {
@@ -31,6 +33,33 @@ public class GeneralUtils {
 
     public static String removePrefix(String ID) {
         return ID.substring(ID.indexOf(":") + 1);
+    }
+
+    public static CardGroup filterCardsForDiscovery(Predicate<AbstractCard> filter) {
+        CardGroup retVal = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+        CardLibrary.getAllCards().stream().filter(filter).forEach(c -> retVal.addToTop(c.makeCopy()));
+        return retVal;
+    }
+
+    public static CardGroup filterCardsForDiscovery(ArrayList<AbstractCard> list, Predicate<AbstractCard> filter) {
+        CardGroup retVal = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+        list.stream().filter(filter).forEach(c -> retVal.addToTop(c.makeCopy()));
+        return retVal;
+    }
+
+    //Will modify or use given list.
+    public static ArrayList<AbstractCard> createCardsForDiscovery(CardGroup list, int amt) {
+        if (list.size() < amt) {
+            return list.group;
+        }
+
+        ArrayList<AbstractCard> retVal = new ArrayList<>();
+        while (retVal.size() < amt && !list.isEmpty()) {
+            AbstractCard tmpCard = list.getRandomCard(true);
+            list.removeCard(tmpCard);
+            retVal.add(tmpCard);
+        }
+        return retVal;
     }
 
     public static void forAllInCombatCards(Consumer<AbstractCard> action, boolean includeLimbo) {

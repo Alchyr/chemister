@@ -1,6 +1,7 @@
 package chemister.cards;
 
 import chemister.ChemisterMod;
+import chemister.powers.DilutionPower;
 import chemister.util.CardStats;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -45,6 +46,8 @@ public abstract class WithdrawalCard extends BaseCard {
     public abstract void withdrawalEffect(AbstractPlayer p, AbstractMonster m);
 
     public static boolean infusedThisTurn() {
+        if (AbstractDungeon.player != null && AbstractDungeon.player.hasPower(DilutionPower.POWER_ID)) return false;
+
         return ChemisterMod.infusedCountThisTurn > 0;
     }
     public static int withdrawalEffectCount() {

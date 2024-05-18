@@ -1,5 +1,13 @@
 [
   {
+    "ID": "reagent",
+    "PROPER_NAME": "Reagent",
+    "NAMES": [
+      "reagent"
+    ],
+    "DESCRIPTION": "Reagents passively modify the effects of your #yFlask, and are not shuffled into your combat deck."
+  },
+  {
     "PROPER_NAME": "Infuse",
     "NAMES": [
       "infuse",
