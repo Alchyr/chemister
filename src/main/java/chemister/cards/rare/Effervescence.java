@@ -1,12 +1,15 @@
 package chemister.cards.rare;
 
-import chemister.ChemisterMod;
 import chemister.actions.EffervescenceAction;
 import chemister.actions.ResetCatalystAction;
 import chemister.cards.CatalystCard;
 import chemister.character.Chemister;
 import chemister.util.CardStats;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.EmptyDeckShuffleAction;
+import com.megacrit.cardcrawl.actions.utility.ScryAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class Effervescence extends CatalystCard {
@@ -28,13 +31,25 @@ public class Effervescence extends CatalystCard {
         super(ID, info, flasks);
 
         setCostUpgrade(12);
+        setMagic(5);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ResetCatalystAction(this));
 
-        int amt = ChemisterMod.getCardBase(this);
-        addToBot(new EffervescenceAction(amt, true));
+        addToBot(new AbstractGameAction() {
+            @Override
+            public void update() {
+                isDone = true;
+                if (AbstractDungeon.player.drawPile.isEmpty() && !AbstractDungeon.player.discardPile.isEmpty()) {
+                    addToTop(new EmptyDeckShuffleAction());
+                }
+            }
+        });
+        addToBot(new ScryAction(magicNumber));
+
+        //int amt = ChemisterMod.getCardBase(this);
+        addToBot(new EffervescenceAction(magicNumber, true));
     }
 }

@@ -133,6 +133,13 @@
       "Effect increased by #b%d."
     ]
   },
+  "${modID}:DoubleDipper": {
+    "TEXT": [
+      "Double Dipper",
+      "The first time you #yInfuse each turn, #yInfuse again.",
+      "The first #b%d times you #yInfuse each turn, #yInfuse again."
+    ]
+  },
   "${modID}:a": {
     "TEXT": [
       "a",

@@ -20,9 +20,6 @@ public class Hypothesize extends BaseCard implements InfuseCard {
     );
 
     private static final Chemister.Flasks[] flasks = new Chemister.Flasks[] {
-            Chemister.Flasks.AER
-    };
-    private static final Chemister.Flasks[] upgFlasks = new Chemister.Flasks[] {
             Chemister.Flasks.AER,
             Chemister.Flasks.AQUA
     };
@@ -30,6 +27,7 @@ public class Hypothesize extends BaseCard implements InfuseCard {
     public Hypothesize() {
         super(ID, info);
 
+        setInnate(false, true);
         setMagic(2, 2);
     }
 
@@ -37,8 +35,7 @@ public class Hypothesize extends BaseCard implements InfuseCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ScryAction(magicNumber));
         infuse(Chemister.Flasks.AER);
-        if (upgraded)
-            infuse(Chemister.Flasks.AQUA);
+        infuse(Chemister.Flasks.AQUA);
     }
 
     @Override
@@ -48,6 +45,6 @@ public class Hypothesize extends BaseCard implements InfuseCard {
 
     @Override
     public Chemister.Flasks[] getFlasks() {
-        return upgraded ? upgFlasks : flasks;
+        return flasks;
     }
 }

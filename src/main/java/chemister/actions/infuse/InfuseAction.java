@@ -17,9 +17,11 @@ public class InfuseAction extends AbstractGameAction implements DisplayableActio
     public final Chemister.Flasks flask;
 
     private FlaskRelic flaskRelic = null;
+    public final boolean canChain;
 
-    public InfuseAction(Chemister.Flasks flask) {
+    public InfuseAction(Chemister.Flasks flask, boolean isChained) {
         this.flask = flask;
+        this.canChain = !isChained;
 
         for (AbstractRelic r : AbstractDungeon.player.relics) {
             if (r instanceof FlaskRelic) {
@@ -31,6 +33,10 @@ public class InfuseAction extends AbstractGameAction implements DisplayableActio
         }
 
         amount = 0;
+    }
+
+    public InfuseAction(Chemister.Flasks flask) {
+        this(flask, false);
     }
 
     @Override
@@ -57,7 +63,7 @@ public class InfuseAction extends AbstractGameAction implements DisplayableActio
             if (r instanceof FlaskRelic) {
                 if (((FlaskRelic) r).flaskType() == flask) {
                     r.flash();
-                    ((FlaskRelic) r).infuse();
+                    ((FlaskRelic) r).infuse(canChain);
 
                     if (sneaky == null || !sneaky.preventInfuseCount()) {
                         ++ChemisterMod.infusedCountThisTurn;

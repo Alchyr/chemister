@@ -10,11 +10,8 @@ import chemister.relics.starter.FlaskAqua;
 import chemister.util.CardStats;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
-import com.megacrit.cardcrawl.actions.utility.ScryAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -22,7 +19,6 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
 import java.util.Arrays;
-import java.util.List;
 
 public class CascadeCrush extends BaseCard implements InfuseCard {
     public static final String ID = makeID(CascadeCrush.class.getSimpleName());
@@ -40,8 +36,10 @@ public class CascadeCrush extends BaseCard implements InfuseCard {
         super(ID, info);
 
         isMultiDamage = true;
-        setDamage(22);
-        setMagic(0, 1);
+
+        setInnate(false, true);
+        setDamage(30);
+        setMagic(1, 0);
     }
 
     @Override
@@ -69,6 +67,7 @@ public class CascadeCrush extends BaseCard implements InfuseCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new XCostAction(this,
                 (amt, params)->{
+                    amt += params[0];
                     if (amt == 0) return true;
 
                     AbstractRelic r = AbstractDungeon.player.getRelic(FlaskAqua.ID);
@@ -99,7 +98,7 @@ public class CascadeCrush extends BaseCard implements InfuseCard {
                     }
 
                     return true;
-                }));
+                }, magicNumber));
     }
 
     private static class CascadeTracker {

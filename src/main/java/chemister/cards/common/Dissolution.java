@@ -1,4 +1,4 @@
-package chemister.cards.uncommon;
+package chemister.cards.common;
 
 import chemister.cards.WithdrawalCard;
 import chemister.character.Chemister;
@@ -12,7 +12,7 @@ public class Dissolution extends WithdrawalCard {
     private static final CardStats info = new CardStats(
             Chemister.Meta.CARD_COLOR,
             CardType.ATTACK,
-            CardRarity.UNCOMMON,
+            CardRarity.COMMON,
             CardTarget.ENEMY,
             3
     );

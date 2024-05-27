@@ -2,10 +2,8 @@ package chemister.cards.rare;
 
 import chemister.actions.ConsumptionAction;
 import chemister.cards.BaseCard;
-import chemister.cards.WithdrawalCard;
 import chemister.character.Chemister;
 import chemister.util.CardStats;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -17,7 +15,7 @@ public class Consumption extends BaseCard {
             CardType.ATTACK,
             CardRarity.RARE,
             CardTarget.ENEMY,
-            1
+            2
     );
 
 

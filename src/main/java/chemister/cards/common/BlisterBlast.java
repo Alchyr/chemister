@@ -24,6 +24,12 @@ public class BlisterBlast extends BaseCard {
 
         setDamage(8, 3);
         setMagic(1);
+
+        setCustomVar("2M", VariableType.MAGIC, baseMagicNumber * 2,
+                (card, m, base)->{
+                    card.setCustomVarValue("2M", card.baseMagicNumber * 2, 0);
+                    return card.magicNumber * 2;
+                });
     }
 
     @Override
@@ -38,28 +44,10 @@ public class BlisterBlast extends BaseCard {
     }
 
     @Override
-    public void applyPowers() {
-        super.applyPowers();
-        this.magicNumber = this.baseMagicNumber;
-        if (ChemisterMod.infusedTypesThisTurn.contains(Chemister.Flasks.IGNIS)) {
-            this.magicNumber *= 2;
-            this.isMagicNumberModified = true;
-        }
-    }
-
-    @Override
-    public void calculateCardDamage(AbstractMonster m) {
-        super.calculateCardDamage(m);
-        this.magicNumber = this.baseMagicNumber;
-        if (ChemisterMod.infusedTypesThisTurn.contains(Chemister.Flasks.IGNIS)) {
-            this.magicNumber *= 2;
-            this.isMagicNumberModified = true;
-        }
-    }
-
-    @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         damageSingle(m, AbstractGameAction.AttackEffect.FIRE);
-        applySingle(m, getVuln(m, magicNumber));
+        applySingle(m, getVuln(m,
+                ChemisterMod.infusedTypesThisTurn.contains(Chemister.Flasks.IGNIS) ?
+                        customVar("2M") : magicNumber));
     }
 }

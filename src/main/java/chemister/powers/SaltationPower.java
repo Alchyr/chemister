@@ -2,6 +2,7 @@ package chemister.powers;
 
 import basemod.BaseMod;
 import chemister.patches.OnRefreshHandPatch;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
@@ -40,9 +41,16 @@ public class SaltationPower extends BasePower implements OnRefreshHandPatch.OnRe
         }
     }
 
-    public void atStartOfTurn() {
-        triggeredThisTurn = false;
+    @Override
+    public void atEndOfRound() {
         addToBot(new ReducePowerAction(this.owner, this.owner, this, 1));
+        addToBot(new AbstractGameAction() {
+            @Override
+            public void update() {
+                SaltationPower.this.triggeredThisTurn = false;
+                isDone = true;
+            }
+        });
     }
 
     @Override

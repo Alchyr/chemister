@@ -278,7 +278,7 @@ public abstract class BaseCard extends CustomCard {
         }
     }
 
-    private void setCustomVarValue(String key, int base, int upg) {
+    public void setCustomVarValue(String key, int base, int upg) {
         cardVariables.compute(key, (k, old)->{
             if (old == null) {
                 return new LocalVarInfo(base, upg);
@@ -484,13 +484,16 @@ public abstract class BaseCard extends CustomCard {
 
         List<DisplayableAction> singleInfuseActions = new ArrayList<>();
         Chemister.Flasks toInfuse;
+        boolean canChain;
 
         for (int i = 0; i < infused.length + additionalInfusions.size(); ++i) {
             if (i < infused.length) {
                 toInfuse = infused[i];
+                canChain = true;
             }
             else {
                 toInfuse = additionalInfusions.get(i - infused.length);
+                canChain = false;
             }
 
             if (skip > 0) {
@@ -514,7 +517,7 @@ public abstract class BaseCard extends CustomCard {
                     }
 
                     singleInfuseActions.clear();
-                    ((FlaskRelic) r).getInfuseActions(singleInfuseActions, tempInfusedCountThisTurn, tempInfusedTypesForTurn, tempInfusedTurnHistory);
+                    ((FlaskRelic) r).getInfuseActions(singleInfuseActions, tempInfusedCountThisTurn, tempInfusedTypesForTurn, tempInfusedTurnHistory, canChain);
 
                     outer:
                     for (DisplayableAction action : singleInfuseActions) {

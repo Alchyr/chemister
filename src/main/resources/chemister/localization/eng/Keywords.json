@@ -8,6 +8,7 @@
     "DESCRIPTION": "Reagents passively modify the effects of your #yFlask, and are not shuffled into your combat deck."
   },
   {
+    "ID": "infuse",
     "PROPER_NAME": "Infuse",
     "NAMES": [
       "infuse",
@@ -18,6 +19,7 @@
     "DESCRIPTION": "Activate the effect of a specified #yFlask."
   },
   {
+    "ID": "withdrawal",
     "PROPER_NAME": "Withdrawal",
     "NAMES": [
       "withdrawal"

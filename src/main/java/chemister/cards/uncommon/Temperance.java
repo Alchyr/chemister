@@ -6,10 +6,7 @@ import chemister.character.Chemister;
 import chemister.util.CardStats;
 import chemister.util.GeneralUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.actions.common.PlayTopCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.red.Havoc;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -60,7 +57,7 @@ public class Temperance extends WithdrawalCard {
             if (AbstractDungeon.player.drawPile.isEmpty()) return;
             if (!condition.test(AbstractDungeon.player.drawPile.getTopCard())) return;
 
-            addToTop(new PlayCardAction(AbstractDungeon.player.drawPile.getTopCard(), AbstractDungeon.player.drawPile, false));
+            addToTop(new PlayCardAction(AbstractDungeon.player.drawPile.getTopCard(), AbstractDungeon.player.drawPile, false, false));
         }
     }
 }

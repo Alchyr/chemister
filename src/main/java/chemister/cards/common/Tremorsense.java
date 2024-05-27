@@ -21,7 +21,7 @@ public class Tremorsense extends BaseCard implements InfuseCard {
             CardType.SKILL,
             CardRarity.COMMON,
             CardTarget.NONE,
-            1
+            0
     );
 
     private static final Chemister.Flasks[] flasks = new Chemister.Flasks[] {
@@ -32,6 +32,7 @@ public class Tremorsense extends BaseCard implements InfuseCard {
     public Tremorsense() {
         super(ID, info);
 
+        setInnate(true);
         setMagic(2, 2);
     }
 

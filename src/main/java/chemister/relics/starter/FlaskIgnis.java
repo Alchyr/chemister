@@ -1,13 +1,10 @@
 package chemister.relics.starter;
 
-import chemister.actions.infuse.BlockDisplayAction;
 import chemister.actions.infuse.DisplayableAction;
 import chemister.actions.infuse.PowerDisplayAction;
-import chemister.cards.InfuseCard;
 import chemister.character.Chemister;
 import chemister.infuse.FlaskBaseEffect;
 import chemister.infuse.InfuseEffect;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 
@@ -16,6 +13,8 @@ import static chemister.ChemisterMod.makeID;
 public class FlaskIgnis extends FlaskRelic {
     private static final String NAME = "FlaskIgnis";
     public static final String ID = makeID(NAME);
+
+    private static final int BASE_STRENGTH = 3;
 
     private final FlaskBaseEffect effect = new FlaskBaseEffect(this, "VIGOR") {
         @Override
@@ -27,13 +26,13 @@ public class FlaskIgnis extends FlaskRelic {
     public FlaskIgnis() {
         super(ID, NAME, Chemister.Meta.CARD_COLOR, RelicTier.STARTER, LandingSound.CLINK);
 
-        counter = 2;
+        counter = BASE_STRENGTH;
         refreshDescriptionAndTips();
     }
 
     @Override
     public void resetCounter() {
-        counter = 2;
+        counter = BASE_STRENGTH;
     }
 
     @Override

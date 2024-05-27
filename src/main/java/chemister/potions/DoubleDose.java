@@ -1,18 +1,23 @@
 package chemister.potions;
 
+import chemister.ChemisterMod;
 import chemister.cards.special.InfuseChoiceCard;
 import chemister.character.Chemister;
+import chemister.util.KeywordInfo;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.watcher.ChooseOneAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.helpers.CardHelper;
+import com.megacrit.cardcrawl.helpers.PowerTip;
 
 import java.util.ArrayList;
 
 import static chemister.ChemisterMod.makeID;
 
 public class DoubleDose extends BasePotion {
+    private static final KeywordInfo infuseKeyword = ChemisterMod.keywords.get("infuse");
+
     public static final String ID = makeID(DoubleDose.class.getSimpleName());
 
     private static final Color LIQUID_COLOR = CardHelper.getColor(230, 46, 40);
@@ -27,6 +32,11 @@ public class DoubleDose extends BasePotion {
     @Override
     public String getDescription() {
         return String.format(potionStrings.DESCRIPTIONS[0], potency);
+    }
+
+    @Override
+    public void addAdditionalTips() {
+        tips.add(new PowerTip(infuseKeyword.PROPER_NAME, infuseKeyword.DESCRIPTION));
     }
 
     @Override

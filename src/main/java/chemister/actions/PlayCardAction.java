@@ -1,5 +1,6 @@
 package chemister.actions;
 
+import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.utility.NewQueueCardAction;
 import com.megacrit.cardcrawl.actions.utility.UnlimboAction;
@@ -16,28 +17,40 @@ public class PlayCardAction extends AbstractGameAction {
     private AbstractCard card;
     private CardGroup sourceGroup;
 
-    public PlayCardAction(AbstractCard cardToUse, AbstractCard originalCard, CardGroup source, boolean exhausts) {
+    public PlayCardAction(AbstractCard cardToUse, AbstractCard originalCard, boolean randomPosition, CardGroup source, boolean exhausts) {
         this.duration = Settings.ACTION_DUR_FAST;
         this.actionType = ActionType.WAIT;
         this.source = AbstractDungeon.player;
         this.card = cardToUse;
 
-        if (originalCard != null)
+        if (randomPosition) {
+            card.current_x = card.target_x = MathUtils.random(0.1F, 0.9F) * (float)Settings.WIDTH;
+            card.target_y = MathUtils.random(0.2F, 0.8F) * (float)Settings.HEIGHT;
+            card.current_y = -500f;
+            if (sourceGroup == null) {
+                AbstractDungeon.player.limbo.addToBottom(card);
+            }
+        }
+        else if (originalCard != null)
         {
             card.current_x = originalCard.current_x;
             card.current_y = originalCard.current_y;
         }
         else
         {
-            card.current_x = (float)Settings.WIDTH / 2.0F - 300.0F * Settings.scale;
-            card.current_y = (float)Settings.HEIGHT / 2.0F;
+            card.current_x = card.target_x = (float)Settings.WIDTH / 2.0F - 300.0F * Settings.scale;
+            card.target_y = (float)Settings.HEIGHT / 2.0F;
+            card.current_y = -500f;
+            if (sourceGroup == null) {
+                AbstractDungeon.player.limbo.addToBottom(card);
+            }
         }
 
         this.sourceGroup = source;
         this.exhaustCards = exhausts;
     }
-    public PlayCardAction(AbstractCard cardToUse, CardGroup source, boolean exhausts) {
-        this(cardToUse, null, source, exhausts);
+    public PlayCardAction(AbstractCard cardToUse, CardGroup source, boolean randomPosition, boolean exhausts) {
+        this(cardToUse, null, randomPosition, source, exhausts && (source != null));
     }
 
     public void update() {
@@ -54,10 +67,11 @@ public class PlayCardAction extends AbstractGameAction {
 
         if (sourceGroup == null)
         {
-            AbstractDungeon.player.limbo.addToBottom(card);
-
-            card.target_x = (float)Settings.WIDTH / 2.0F - 300.0F * Settings.scale;
-            card.target_y = (float)Settings.HEIGHT / 2.0F;
+            if (!AbstractDungeon.player.limbo.contains(card)) {
+                card.target_x = (float)Settings.WIDTH / 2.0F - 300.0F * Settings.scale;
+                card.target_y = (float)Settings.HEIGHT / 2.0F;
+                AbstractDungeon.player.limbo.addToTop(card);
+            }
 
             card.purgeOnUse = true;
             AbstractDungeon.actionManager.cardQueue.add(new CardQueueItem(card, true, EnergyPanel.getCurrentEnergy(),true,true));

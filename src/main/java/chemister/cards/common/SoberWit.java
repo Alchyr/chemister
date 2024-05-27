@@ -1,7 +1,5 @@
 package chemister.cards.common;
 
-import chemister.cards.BaseCard;
-import chemister.cards.InfuseCard;
 import chemister.cards.WithdrawalCard;
 import chemister.character.Chemister;
 import chemister.util.CardStats;
@@ -21,7 +19,7 @@ public class SoberWit extends WithdrawalCard {
     public SoberWit() {
         super(ID, info);
 
-        setBlock(8, 3);
+        setBlock(9, 3);
         setMagic(1);
     }
 

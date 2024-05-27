@@ -45,7 +45,7 @@ public class BernoullisPrinciple extends ReagentCard {
 
                 @Override
                 public DisplayableAction createAction(int amt) {
-                    return new InfuseAction(Chemister.Flasks.AQUA);
+                    return new InfuseAction(Chemister.Flasks.AQUA, true);
                 }
 
                 @Override

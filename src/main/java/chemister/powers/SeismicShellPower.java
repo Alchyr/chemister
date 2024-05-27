@@ -29,7 +29,7 @@ public class SeismicShellPower extends BasePower {
         addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, this));
         if (lastTurnBlock != 0) {
             flash();
-            addToTop(new DamageAllEnemiesAction(AbstractDungeon.player, DamageInfo.createDamageMatrix(this.amount * lastTurnBlock, true, false),
+            addToBot(new DamageAllEnemiesAction(AbstractDungeon.player, DamageInfo.createDamageMatrix(this.amount * lastTurnBlock, true, false),
                     DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.BLUNT_HEAVY));
         }
     }

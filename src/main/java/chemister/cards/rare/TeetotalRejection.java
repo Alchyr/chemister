@@ -19,17 +19,17 @@ public class TeetotalRejection extends WithdrawalCard {
 
 
     public TeetotalRejection() {
-        super(ID, info);
+        super(ID, info, false);
 
         setDamage(12);
-        setMagic(2);
+        setMagic(2, 1);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         damageSingle(m, AbstractGameAction.AttackEffect.FIRE);
 
-        if (upgraded || infusedThisTurn()) {
+        if (infusedThisTurn()) { // || upgraded
             applySingle(m, getWeak(m, magicNumber));
         }
 

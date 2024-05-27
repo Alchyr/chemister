@@ -26,7 +26,8 @@ public class EmergencyEarthworks extends BaseCard implements InfuseCard {
     public EmergencyEarthworks() {
         super(ID, info);
 
-        setMagic(1, 1);
+        setMagic(2);
+        setInnate(false, true);
     }
 
     @Override

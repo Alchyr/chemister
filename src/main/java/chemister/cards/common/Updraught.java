@@ -26,7 +26,7 @@ public class Updraught extends BaseCard implements InfuseCard {
     public Updraught() {
         super(ID, info);
 
-        setDamage(7, 3);
+        setDamage(9, 3);
     }
 
     @Override

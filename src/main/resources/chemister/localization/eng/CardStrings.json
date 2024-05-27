@@ -64,7 +64,7 @@
   },
   "${modID}:BlisterBlast": {
     "NAME": "Blister Blast",
-    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Vulnerable. NL Applies twice as much if you ${modID}:Infused [#f22424]Ignis[] this turn."
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Vulnerable. NL If you ${modID}:Infused [#f22424]Ignis[] this turn, apply !${modID}:2M! instead."
   },
   "${modID}:AdaptiveAssault": {
     "NAME": "Adaptive Assault",
@@ -105,7 +105,7 @@
   },
   "${modID}:Tremorsense": {
     "NAME": "Tremorsense",
-    "DESCRIPTION": "Scry !M!. NL ${modID}:Infuse [#90e2e8]Aer[]. NL If the top card of your draw pile has a ${modID}:Base of 2 or more, ${modID}:Infuse [#bf7330]Terra[]."
+    "DESCRIPTION": "Innate. NL Scry !M!. ${modID}:Infuse [#90e2e8]Aer[]. NL If the top card of your draw pile has a ${modID}:Base of 2 or more, ${modID}:Infuse [#bf7330]Terra[]."
   },
   "${modID}:TidalTincture": {
     "NAME": "Tidal Tincture",
@@ -141,8 +141,8 @@
   },
   "${modID}:Hypothesize": {
     "NAME": "Hypothesize",
-    "DESCRIPTION": "Scry !M!. NL ${modID}:Infuse [#90e2e8]Aer[].",
-    "UPGRADE_DESCRIPTION": "Scry !M!. NL ${modID}:Infuse [#90e2e8]Aer[]. NL ${modID}:Infuse [#4f52ff]Aqua[]."
+    "DESCRIPTION": "Scry !M!. NL ${modID}:Infuse [#90e2e8]Aer[]. NL ${modID}:Infuse [#4f52ff]Aqua[].",
+    "UPGRADE_DESCRIPTION": "Innate. NL Scry !M!. NL ${modID}:Infuse [#90e2e8]Aer[]. NL ${modID}:Infuse [#4f52ff]Aqua[]."
   },
   "${modID}:BagBlock": {
     "NAME": "Bag Block",
@@ -162,7 +162,7 @@
   },
   "${modID}:ArsonArmor": {
     "NAME": "Arson Armor",
-    "DESCRIPTION": "Gain !B! Block. NL Whenever you take damage this turn, ${modID}:Infuse [#f22424]Ignis[]."
+    "DESCRIPTION": "Gain !B! Block. NL Whenever you are attacked this turn, ${modID}:Infuse [#f22424]Ignis[]."
   },
   "${modID}:Brainstorm": {
     "NAME": "Brainstorm",
@@ -182,15 +182,16 @@
   },
   "${modID}:Temperance": {
     "NAME": "Temperance",
-    "DESCRIPTION": "If the top card of your draw pile costs !M! or less, play it. NL ${modID}:Withdrawal: Repeat this. NL Exhaust."
+    "DESCRIPTION": "Play the first card in your draw pile that costs !M! or less, play it. NL ${modID}:Withdrawal: Repeat this. NL Exhaust."
   },
   "${modID}:Blitzlixir": {
     "NAME": "Blitz-lixir",
-    "DESCRIPTION": "{@@}{!M!|0=Do nothing. |repeat=${modID}:Infuse [#90e2e8]Aer[]. Draw a card. }NL Exhaust."
+    "DESCRIPTION": "{@@}{!M!|0=Do nothing. |repeat=${modID}:Infuse [#90e2e8]Aer[]. Draw a card. }NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "{@@}Innate. NL {!M!|0=Do nothing. |repeat=${modID}:Infuse [#90e2e8]Aer[]. Draw a card. }NL Exhaust."
   },
   "${modID}:SturdySubstrate": {
     "NAME": "Sturdy Substrate",
-    "DESCRIPTION": "{@@}${modID}:Infuse [#bf7330]Terra[] {!M!|2=twice|3=thrice|@=!M! times}. NL Block is not removed at the start of your next turn."
+    "DESCRIPTION": "{@@}${modID}:Infuse [#bf7330]Terra[]{!M!|1=|2= twice|3= thrice|@= !M! times}. NL Block is not removed at the start of your next turn."
   },
   "${modID}:InvigoratingInfusion": {
     "NAME": "Invigorating Infusion",
@@ -278,7 +279,7 @@
     "DESCRIPTION": "The first time each combat you ${modID}:Infuse [#bf7330]Terra[] and [#90e2e8]Aer[] in the same turn, create a copy of the lowest cost Skill in your hand."
   },
   "${modID}:TeetotalRejection": {
-    "NAME": "Teetotal Rejecction",
+    "NAME": "Teetotal Rejection",
     "DESCRIPTION": "Deal !D! damage. NL Apply !M! Weak. NL ${modID}:Withdrawal: Apply !M! Vulnerable instead.",
     "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Apply !M! Weak. NL ${modID}:Withdrawal: Apply !M! Vulnerable."
   },
@@ -296,7 +297,8 @@
   },
   "${modID}:CascadeCrush": {
     "NAME": "Cascade Crush",
-    "DESCRIPTION": "{@@}${modID}:Infuse [#4f52ff]Aqua[] X{!M!|0=|1=+1|2=+2|@= + !M!} times. NL If the total ${modID}:Base of the cards drawn is at least 4, deal !D! damage to ALL enemies."
+    "DESCRIPTION": "{@@}${modID}:Infuse [#4f52ff]Aqua[] X{!M!|0=|1=+1|2=+2|@= + !M!} times. NL If the total ${modID}:Base of the cards drawn is at least 4, deal !D! damage to ALL enemies.",
+    "UPGRADE_DESCRIPTION": "{@@}Innate. NL ${modID}:Infuse [#4f52ff]Aqua[] X{!M!|0=|1=+1|2=+2|@= + !M!} times. NL If the total ${modID}:Base of the cards drawn is at least 4, deal !D! damage to ALL enemies."
   },
   "${modID}:SackSmack": {
     "NAME": "Sack Smack",
@@ -309,7 +311,8 @@
   },
   "${modID}:EmergencyEarthworks": {
     "NAME": "Emergency Earthworks",
-    "DESCRIPTION": "{@@}${modID}:Infuse [#bf7330]Terra[]{!M!|1=|@= !M! times}. NL ${modID}:Infuse [#bf7330]Terra[] for each enemy in combat."
+    "DESCRIPTION": "{@@}${modID}:Infuse [#bf7330]Terra[]{!M!|1=|@= !M! times}. NL ${modID}:Infuse [#bf7330]Terra[] for each enemy in combat.",
+    "UPGRADE_DESCRIPTION": "{@@}Innate. NL ${modID}:Infuse [#bf7330]Terra[]{!M!|1=|@= !M! times}. NL ${modID}:Infuse [#bf7330]Terra[] for each enemy in combat."
   },
   "${modID}:Pyroclasticlysm": {
     "NAME": "Pyroclasticlysm",
@@ -333,7 +336,7 @@
   },
   "${modID}:Effervescence": {
     "NAME": "Effervescence",
-    "DESCRIPTION": "${modID}:Catalyst. NL Play copies of the top card of your draw pile equal to this card's ${modID}:Base."
+    "DESCRIPTION": "${modID}:Catalyst. NL Scry !M!. NL Play !M! copies of the top card of your draw pile."
   },
   "${modID}:Ashes": {
     "NAME": "Ashes",

@@ -25,7 +25,8 @@ public class Blitzlixir extends BaseCard implements InfuseCard {
     public Blitzlixir() {
         super(ID, info);
 
-        setMagic(2, 1);
+        setInnate(false, true);
+        setMagic(2);
         createFlasks();
         setExhaust(true);
     }

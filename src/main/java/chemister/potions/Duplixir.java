@@ -1,9 +1,11 @@
 package chemister.potions;
 
 import basemod.helpers.CardModifierManager;
+import chemister.ChemisterMod;
 import chemister.cardmods.TemporaryCardmod;
 import chemister.cards.ReagentCard;
 import chemister.character.Chemister;
+import chemister.util.KeywordInfo;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -11,12 +13,15 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.shrines.WeMeetAgain;
 import com.megacrit.cardcrawl.helpers.CardHelper;
+import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 
 import static chemister.ChemisterMod.makeID;
 
 public class Duplixir extends BasePotion {
+    private static final KeywordInfo reagentKeyword = ChemisterMod.keywords.get("reagent");
+
     public static final String ID = makeID(Duplixir.class.getSimpleName());
 
     private static final Color LIQUID_COLOR = CardHelper.getColor(255, 255, 255);
@@ -40,6 +45,11 @@ public class Duplixir extends BasePotion {
     @Override
     public String getDescription() {
         return String.format(potionStrings.DESCRIPTIONS[0], potency);
+    }
+
+    @Override
+    public void addAdditionalTips() {
+        tips.add(new PowerTip(reagentKeyword.PROPER_NAME, reagentKeyword.DESCRIPTION));
     }
 
     @Override

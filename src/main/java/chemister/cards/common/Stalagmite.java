@@ -26,7 +26,7 @@ public class Stalagmite extends BaseCard implements InfuseCard {
     public Stalagmite() {
         super(ID, info);
 
-        setDamage(6, 3);
+        setDamage(7, 3);
     }
 
     @Override

@@ -2,11 +2,9 @@ package chemister.powers;
 
 import chemister.actions.infuse.InfuseAction;
 import chemister.character.Chemister;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.*;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 import static chemister.ChemisterMod.makeID;
 
@@ -19,13 +17,16 @@ public class ArsonArmorPower extends BasePower {
     }
 
     public int onAttacked(DamageInfo info, int damageAmount) {
-        this.flash();
-        addToTop(new InfuseAction(Chemister.Flasks.IGNIS));
+        if (info.owner != null && info.type == DamageInfo.DamageType.NORMAL && info.owner != this.owner) {
+            this.flash();
+            addToTop(new InfuseAction(Chemister.Flasks.IGNIS));
+        }
 
         return damageAmount;
     }
 
-    public void atStartOfTurn() {
+    @Override
+    public void atEndOfRound() {
         addToBot(new ReducePowerAction(this.owner, this.owner, this, 1));
     }
 

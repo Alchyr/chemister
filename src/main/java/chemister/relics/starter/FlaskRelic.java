@@ -2,6 +2,7 @@ package chemister.relics.starter;
 
 import chemister.ChemisterMod;
 import chemister.actions.infuse.DisplayableAction;
+import chemister.actions.infuse.InfuseAction;
 import chemister.cards.InfuseCard;
 import chemister.cards.ReagentCard;
 import chemister.character.Chemister;
@@ -16,6 +17,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 import java.util.*;
 
@@ -43,9 +45,9 @@ public abstract class FlaskRelic extends BaseRelic {
     }
 
     public abstract Chemister.Flasks flaskType();
-    public void infuse() {
+    public void infuse(boolean canChain) {
         List<DisplayableAction> actions = new ArrayList<>();
-        getInfuseActions(actions, ChemisterMod.infusedCountThisTurn, ChemisterMod.infusedTypesThisTurn, ChemisterMod.infusedTurnHistory);
+        getInfuseActions(actions, ChemisterMod.infusedCountThisTurn, ChemisterMod.infusedTypesThisTurn, ChemisterMod.infusedTurnHistory, canChain);
         for (int i = actions.size() - 1; i >= 0; --i) {
             addToTop(actions.get(i).getAction());
         }
@@ -142,6 +144,21 @@ public abstract class FlaskRelic extends BaseRelic {
             infuseEffects.add(reagentEffect);
         }
 
+        outer:
+        for (AbstractRelic r : AbstractDungeon.player.relics) {
+            if (r instanceof InfuseEffectRelic) {
+                InfuseEffect relicEffect = ((InfuseEffectRelic) r).infuseEffect(this);
+
+                for (InfuseEffect effect : infuseEffects) { //Merge if already existing
+                    if (effect.ID.equals(relicEffect.ID)) {
+                        effect.merge(relicEffect);
+                        continue outer;
+                    }
+                } //Otherwise add
+                infuseEffects.add(relicEffect);
+            }
+        }
+
         infuseEffects.sort(Comparator.comparingInt((effect)->effect.priority));
 
         for (InfuseEffect effect : infuseEffects) {
@@ -157,11 +174,14 @@ public abstract class FlaskRelic extends BaseRelic {
 
     public abstract InfuseEffect getBaseEffect();
 
-    public void getInfuseActions(List<DisplayableAction> actions, int infusedCount, List<Chemister.Flasks> infusedThisTurn, List<List<Chemister.Flasks>> infusedThisCombat) {
+    public void getInfuseActions(List<DisplayableAction> actions, int infusedCount, List<Chemister.Flasks> infusedThisTurn, List<List<Chemister.Flasks>> infusedThisCombat, boolean canChain) {
         outer:
         for (InfuseEffect effect : infuseEffects) {
             DisplayableAction action = effect.getAction(actions, infusedCount, infusedThisTurn, infusedThisCombat);
             if (action != null) {
+                if (action instanceof InfuseAction && !canChain) {
+                    continue outer;
+                }
                 for (DisplayableAction existingAction : actions) {
                     if (existingAction.merge(action)) {
                         continue outer;
@@ -174,6 +194,10 @@ public abstract class FlaskRelic extends BaseRelic {
 
     public interface FlaskValuePower {
         void modifyFlaskValue(FlaskRelic r);
+    }
+
+    public interface InfuseEffectRelic {
+        InfuseEffect infuseEffect(FlaskRelic flaskRelic);
     }
 
     /*

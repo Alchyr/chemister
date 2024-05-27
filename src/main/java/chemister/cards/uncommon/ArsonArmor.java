@@ -7,7 +7,6 @@ import chemister.powers.ArsonArmorPower;
 import chemister.util.CardStats;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class ArsonArmor extends BaseCard implements InfuseCard {
@@ -27,7 +26,7 @@ public class ArsonArmor extends BaseCard implements InfuseCard {
     public ArsonArmor() {
         super(ID, info);
 
-        setBlock(11, 4);
+        setBlock(10, 4);
     }
 
     @Override

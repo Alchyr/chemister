@@ -38,5 +38,75 @@
       "When #y${modID}:Infused, reduce the cost of the next card drawn by #b",
       " for the turn."
     ]
+  },
+  "${modID}:ExemplaryEnzyme": {
+    "NAME": "Exemplary Enzyme",
+    "FLAVOR": "flavor text",
+    "DESCRIPTIONS": [
+      "The first time each combat you draw a #y${modID}:Catalyst, randomly #y${modID}:Infuse one of its corresponding Flasks."
+    ]
+  },
+  "${modID}:DoubleDipper": {
+    "NAME": "Double Dipper",
+    "FLAVOR": "flavor text",
+    "DESCRIPTIONS": [
+      "The first time you #y${modID}:Infuse each turn, #y${modID}:Infuse the same Flask again."
+    ]
+  },
+  "${modID}:TravelRefill": {
+    "NAME": "Travel Refill",
+    "FLAVOR": "flavor text",
+    "DESCRIPTIONS": [
+      "At the end of every 4th combat, obtain a random temporary #y${modID}:Reagent."
+    ]
+  },
+  "${modID}:RunawayReaction": {
+    "NAME": "Runaway Reaction",
+    "FLAVOR": "flavor text",
+    "DESCRIPTIONS": [
+      "Whenever you #y${modID}:Infuse, deal #b%d damage to a random enemy."
+    ]
+  },
+  "${modID}:FragileFlasks": {
+    "NAME": "Fragile Flasks",
+    "FLAVOR": "flavor text",
+    "DESCRIPTIONS": [
+      "Whenever you take unblocked attack damage, #y${modID}:Infuse a random Flask."
+    ]
+  },
+  "${modID}:EternalFlame": {
+    "NAME": "Eternal Flame",
+    "FLAVOR": "flavor text",
+    "DESCRIPTIONS": [
+      "#yVigor consumption is halved."
+    ]
+  },
+  "${modID}:CatalystCatalyst": {
+    "NAME": "Catalyst Catalyst",
+    "FLAVOR": "flavor text",
+    "DESCRIPTIONS": [
+      "The cost of #y${modID}:Catalyst cards is reduced by #b%d more when you #y${modID}:Infuse."
+    ]
+  },
+  "${modID}:VolatileMix": {
+    "NAME": "Volatile Mix",
+    "FLAVOR": "flavor text",
+    "DESCRIPTIONS": [
+      "Upon pickup, choose two Flasks. Whenever you #y${modID}:Infuse one, #y${modID}:Infuse the other."
+    ]
+  },
+  "${modID}:ChemisterGuide": {
+    "NAME": "Chemister'sGuide",
+    "FLAVOR": "flavor text",
+    "DESCRIPTIONS": [
+      "Upon pickup, choose and add #b%d #y${modID}:Reagents to your deck."
+    ]
+  },
+  "${modID}:PerfectedElixir": {
+    "NAME": "Perfected Elixir",
+    "FLAVOR": "flavor text",
+    "DESCRIPTIONS": [
+      "The first time each turn you #y${modID}:Infuse all your Flasks, gain [E]."
+    ]
   }
 }

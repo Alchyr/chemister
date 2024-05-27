@@ -1,16 +1,13 @@
 package chemister.relics.starter;
 
-import chemister.actions.infuse.BlockDisplayAction;
 import chemister.actions.infuse.DisplayableAction;
 import chemister.actions.infuse.DrawDisplayAction;
-import chemister.cards.InfuseCard;
 import chemister.character.Chemister;
 import chemister.infuse.FlaskBaseEffect;
 import chemister.infuse.InfuseEffect;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -80,8 +77,8 @@ public class FlaskAqua extends FlaskRelic {
     }
 
     @Override
-    public void infuse() {
-        super.infuse();
+    public void infuse(boolean canChain) {
+        super.infuse(canChain);
         drawFollowup.clear();
     }
 

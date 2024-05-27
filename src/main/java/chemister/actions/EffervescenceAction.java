@@ -2,7 +2,6 @@ package chemister.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.EmptyDeckShuffleAction;
-import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
@@ -32,8 +31,7 @@ public class EffervescenceAction extends AbstractGameAction {
 
         AbstractCard c = AbstractDungeon.player.drawPile.getTopCard();
         for (int i = 0; i < amount; ++i) {
-            addToTop(new WaitAction(0.1f));
-            addToTop(new PlayCardAction(c.makeSameInstanceOf(), null, true));
+            addToTop(new PlayCardAction(c.makeSameInstanceOf(), null, amount > 1, true));
         }
     }
 }

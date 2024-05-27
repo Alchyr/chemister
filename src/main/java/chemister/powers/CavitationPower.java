@@ -31,7 +31,8 @@ public class CavitationPower extends BasePower {
         }
     }
 
-    public void atStartOfTurn() {
+    @Override
+    public void atEndOfRound() {
         addToBot(new ReducePowerAction(this.owner, this.owner, this, 1));
     }
 
