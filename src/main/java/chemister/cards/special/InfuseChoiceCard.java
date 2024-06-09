@@ -23,21 +23,7 @@ public class InfuseChoiceCard extends BaseCard implements InfuseCard {
     );
 
     private static final String[] FLASK_TEXT = CardCrawlGame.languagePack.getUIString(makeID("Flasks")).TEXT;
-
-    private static final Chemister.Flasks[] none = new Chemister.Flasks[] { };
-    private Chemister.Flasks[] flask = none;
-
-    public InfuseChoiceCard() {
-        super(ID, info);
-    }
-
-    public InfuseChoiceCard(Chemister.Flasks flask, int amt) {
-        this();
-
-        setMagic(amt);
-        this.flask = new Chemister.Flasks[amt];
-        Arrays.fill(this.flask, flask);
-
+    public static String getInfuseName(Chemister.Flasks flask) {
         String flaskName;
         switch (flask) {
             case IGNIS:
@@ -56,7 +42,24 @@ public class InfuseChoiceCard extends BaseCard implements InfuseCard {
                 flaskName = "???";
                 break;
         }
-        this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[0] + flaskName + cardStrings.EXTENDED_DESCRIPTION[1];
+        return flaskName;
+    }
+
+    private static final Chemister.Flasks[] none = new Chemister.Flasks[] { };
+    private Chemister.Flasks[] flask = none;
+
+    public InfuseChoiceCard() {
+        super(ID, info);
+    }
+
+    public InfuseChoiceCard(Chemister.Flasks flask, int amt) {
+        this();
+
+        setMagic(amt);
+        this.flask = new Chemister.Flasks[amt];
+        Arrays.fill(this.flask, flask);
+
+        this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[0] + getInfuseName(flask) + cardStrings.EXTENDED_DESCRIPTION[1];
         initializeDescription();
     }
 

@@ -857,6 +857,9 @@ public abstract class BaseCard extends CustomCard {
         addToBot(new VFXAction(effect, duration));
     }
 
+    protected void infuse() {
+        addToBot(new InfuseAction());
+    }
     protected void infuse(Chemister.Flasks flask) {
         addToBot(new InfuseAction(flask));
     }

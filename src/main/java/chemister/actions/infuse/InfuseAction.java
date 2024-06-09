@@ -39,6 +39,10 @@ public class InfuseAction extends AbstractGameAction implements DisplayableActio
         this(flask, false);
     }
 
+    public InfuseAction() {
+        this(Chemister.Flasks.values()[AbstractDungeon.cardRandomRng.random(Chemister.Flasks.values().length - 1)]);
+    }
+
     @Override
     public void update() {
         AbstractPower p = AbstractDungeon.player.getPower(SneakySipPower.POWER_ID);
@@ -86,8 +90,14 @@ public class InfuseAction extends AbstractGameAction implements DisplayableActio
                     );
 
                     for (AbstractPower pow : AbstractDungeon.player.powers) {
-                        if (pow instanceof PostInfusePower) {
-                            ((PostInfusePower) pow).postInfusion((FlaskRelic) r);
+                        if (pow instanceof PostInfuseTrigger) {
+                            ((PostInfuseTrigger) pow).postInfusion((FlaskRelic) r);
+                        }
+                    }
+
+                    for (AbstractRelic relic : AbstractDungeon.player.relics) {
+                        if (relic instanceof PostInfuseTrigger) {
+                            ((PostInfuseTrigger) relic).postInfusion((FlaskRelic) r);
                         }
                     }
                     break;
@@ -118,7 +128,7 @@ public class InfuseAction extends AbstractGameAction implements DisplayableActio
         return false;
     }
 
-    public interface PostInfusePower {
+    public interface PostInfuseTrigger {
         void postInfusion(FlaskRelic flask);
     }
 }

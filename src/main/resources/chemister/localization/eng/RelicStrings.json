@@ -85,28 +85,30 @@
     "NAME": "Catalyst Catalyst",
     "FLAVOR": "flavor text",
     "DESCRIPTIONS": [
-      "The cost of #y${modID}:Catalyst cards is reduced by #b%d more when you #y${modID}:Infuse."
+      "The cost of #y${modID}:Catalyst cards is reduced by #b1 more when you #y${modID}:Infuse."
     ]
   },
   "${modID}:VolatileMix": {
     "NAME": "Volatile Mix",
     "FLAVOR": "flavor text",
     "DESCRIPTIONS": [
-      "Upon pickup, choose two Flasks. Whenever you #y${modID}:Infuse one, #y${modID}:Infuse the other."
+      "Upon pickup, choose two #yFlasks. Whenever you #y${modID}:Infuse one, #y${modID}:Infuse the other.",
+      "Whenever you #y${modID}:Infuse %s or %s, #y${modID}:Infuse the other."
     ]
   },
   "${modID}:ChemisterGuide": {
-    "NAME": "Chemister'sGuide",
+    "NAME": "Chemister's Guide",
     "FLAVOR": "flavor text",
     "DESCRIPTIONS": [
-      "Upon pickup, choose and add #b%d #y${modID}:Reagents to your deck."
+      "Upon pickup, obtain #b%d #y${modID}:Reagent card rewards.",
+      "Experimentation!"
     ]
   },
   "${modID}:PerfectedElixir": {
     "NAME": "Perfected Elixir",
     "FLAVOR": "flavor text",
     "DESCRIPTIONS": [
-      "The first time each turn you #y${modID}:Infuse all your Flasks, gain [E]."
+      "The first time each turn you #y${modID}:Infuse all of your #yFlasks, gain [E] ."
     ]
   }
 }

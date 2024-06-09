@@ -21,13 +21,14 @@ public class PyroclasticlysmPower extends BasePower {
     @Override
     public void onAttack(DamageInfo info, int damageAmount, AbstractCreature target) {
         if (info.type == DamageInfo.DamageType.NORMAL) {
+            AbstractCreature attacked = target;
             addToTop(new AbstractGameAction() {
                 @Override
                 public void update() {
                     isDone = true;
-                    if (target != null && target.lastDamageTaken > 0) {
+                    if (attacked != null && attacked.lastDamageTaken > 0) {
                         PyroclasticlysmPower.this.flash();
-                        addToTop(new GainBlockAction(PyroclasticlysmPower.this.owner, target.lastDamageTaken));
+                        addToTop(new GainBlockAction(PyroclasticlysmPower.this.owner, attacked.lastDamageTaken));
                     }
                 }
             });

@@ -81,6 +81,7 @@ public abstract class ReagentCard extends BaseCard {
         8 - Oxidizing
         10 - Bernoulli's
         15 - Double Dipper (Relic)
+        16 - Volatile Mix
         99 - Fulminating
          */
 

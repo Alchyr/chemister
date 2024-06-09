@@ -1,17 +1,11 @@
 package chemister.cards.uncommon;
 
-import chemister.actions.infuse.InfuseAction;
 import chemister.cards.BaseCard;
 import chemister.cards.InfuseCard;
-import chemister.cards.WithdrawalCard;
 import chemister.character.Chemister;
 import chemister.util.CardStats;
-import chemister.util.GeneralUtils;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class BagBlock extends BaseCard implements InfuseCard {
@@ -34,8 +28,8 @@ public class BagBlock extends BaseCard implements InfuseCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         block();
 
-        infuse(Chemister.Flasks.values()[AbstractDungeon.cardRandomRng.random(Chemister.Flasks.values().length - 1)]);
-        infuse(Chemister.Flasks.values()[AbstractDungeon.cardRandomRng.random(Chemister.Flasks.values().length - 1)]);
+        infuse();
+        infuse();
     }
 
     @Override

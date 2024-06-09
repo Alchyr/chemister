@@ -47,17 +47,11 @@ public class GeneralUtils {
         return retVal;
     }
 
-    //Will modify or use given list.
     public static ArrayList<AbstractCard> createCardsForDiscovery(CardGroup list, int amt) {
-        if (list.size() < amt) {
-            return list.group;
-        }
+        ArrayList<AbstractCard> retVal = new ArrayList<>(list.group);
 
-        ArrayList<AbstractCard> retVal = new ArrayList<>();
-        while (retVal.size() < amt && !list.isEmpty()) {
-            AbstractCard tmpCard = list.getRandomCard(true);
-            list.removeCard(tmpCard);
-            retVal.add(tmpCard);
+        while (retVal.size() > amt) {
+            retVal.remove(AbstractDungeon.cardRng.random(retVal.size() - 1));
         }
         return retVal;
     }

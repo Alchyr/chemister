@@ -1,14 +1,11 @@
 package chemister.cards.common;
 
-import chemister.actions.infuse.InfuseAction;
 import chemister.cards.InfuseCard;
 import chemister.cards.WithdrawalCard;
 import chemister.character.Chemister;
 import chemister.util.CardStats;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import java.util.Arrays;
@@ -55,15 +52,7 @@ public class ThinkFast extends WithdrawalCard implements InfuseCard {
             queueWithdrawalEffect(p, m);
         }
         else {
-            addToBot(new AbstractGameAction() {
-                @Override
-                public void update() {
-                    addToTop(new InfuseAction(
-                            Chemister.Flasks.values()[AbstractDungeon.cardRandomRng.random(Chemister.Flasks.values().length - 1)]
-                    ));
-                    isDone = true;
-                }
-            });
+            infuse();
         }
     }
 

@@ -33,7 +33,7 @@ import static chemister.ChemisterMod.makeID;
 
 public class Chemister extends CustomPlayer {
     public enum Flasks {
-        IGNIS, AQUA, AER, TERRA
+        TERRA, IGNIS, AQUA, AER
     }
 
     //Stats
@@ -115,6 +115,7 @@ public class Chemister extends CustomPlayer {
         dialogX = (drawX + 0.0F * Settings.scale);
         dialogY = (drawY + 220.0F * Settings.scale);
     }
+
 
     @Override
     public ArrayList<String> getStartingDeck() {

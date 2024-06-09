@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 
 import static chemister.ChemisterMod.makeID;
 
-public class FulminatingTerraPower extends BasePower implements FlaskRelic.FlaskValuePower, InfuseAction.PostInfusePower {
+public class FulminatingTerraPower extends BasePower implements FlaskRelic.FlaskValuePower, InfuseAction.PostInfuseTrigger {
     public static final String POWER_ID = makeID("FulminatingTerraPower");
     private static final boolean TURN_BASED = true;
 

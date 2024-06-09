@@ -140,6 +140,12 @@
       "The first #b%d times you #yInfuse each turn, #yInfuse again."
     ]
   },
+  "${modID}:VolatileMix": {
+    "TEXT": [
+      "Volatile Mix",
+      "When #yInfused, #yInfuse %s."
+    ]
+  },
   "${modID}:a": {
     "TEXT": [
       "a",

@@ -58,7 +58,7 @@ public class AcidicAcetate extends ReagentCard {
         @Override
         protected int getAmount(int infusedCount, List<Chemister.Flasks> infusedThisTurn, List<List<Chemister.Flasks>> infusedThisCombat) {
             int amt = maxAmount - GeneralUtils.count(infusedThisTurn, Chemister.Flasks.AQUA);
-            isActive = amt != 0;
+            isActive = amt > 0;
             return amt;
         }
 

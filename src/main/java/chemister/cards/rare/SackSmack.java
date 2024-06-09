@@ -3,7 +3,6 @@ package chemister.cards.rare;
 import chemister.actions.infuse.InfuseAction;
 import chemister.cards.BaseCard;
 import chemister.cards.InfuseCard;
-import chemister.cards.WithdrawalCard;
 import chemister.cards.special.InfuseChoiceCard;
 import chemister.character.Chemister;
 import chemister.util.CardStats;
@@ -12,12 +11,9 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.watcher.ChooseOneAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 public class SackSmack extends BaseCard implements InfuseCard {
     public static final String ID = makeID(SackSmack.class.getSimpleName());
@@ -42,7 +38,7 @@ public class SackSmack extends BaseCard implements InfuseCard {
 
         if (!upgraded) {
             for (int i = 0; i < magicNumber; ++i) {
-                addToBot(new InfuseAction(Chemister.Flasks.values()[AbstractDungeon.cardRandomRng.random(Chemister.Flasks.values().length - 1)]));
+                addToBot(new InfuseAction());
             }
         }
         else {

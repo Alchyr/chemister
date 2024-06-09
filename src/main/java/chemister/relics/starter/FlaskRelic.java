@@ -95,7 +95,7 @@ public abstract class FlaskRelic extends BaseRelic {
         //Called when master deck changes/on initialization.
         //Not intended for "active" changes.
         //Only permanent fixed value changes should modify counter in getEffect.
-        if (CardCrawlGame.isInARun()) {
+        if (reagentTips != null && CardCrawlGame.isInARun()) {
             resetCounter();
             tips.removeAll(reagentTips);
             reagentTips.clear();
@@ -149,13 +149,15 @@ public abstract class FlaskRelic extends BaseRelic {
             if (r instanceof InfuseEffectRelic) {
                 InfuseEffect relicEffect = ((InfuseEffectRelic) r).infuseEffect(this);
 
-                for (InfuseEffect effect : infuseEffects) { //Merge if already existing
-                    if (effect.ID.equals(relicEffect.ID)) {
-                        effect.merge(relicEffect);
-                        continue outer;
-                    }
-                } //Otherwise add
-                infuseEffects.add(relicEffect);
+                if (relicEffect != null) {
+                    for (InfuseEffect effect : infuseEffects) { //Merge if already existing
+                        if (effect.ID.equals(relicEffect.ID)) {
+                            effect.merge(relicEffect);
+                            continue outer;
+                        }
+                    } //Otherwise add
+                    infuseEffects.add(relicEffect);
+                }
             }
         }
 
