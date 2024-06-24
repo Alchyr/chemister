@@ -1,4 +1,4 @@
-package chemister.cards.uncommon;
+package chemister.cards.rare;
 
 import chemister.cards.BaseCard;
 import chemister.cards.InfuseCard;
@@ -14,7 +14,7 @@ public class Hypothesize extends BaseCard implements InfuseCard {
     private static final CardStats info = new CardStats(
             Chemister.Meta.CARD_COLOR,
             CardType.SKILL,
-            CardRarity.UNCOMMON,
+            CardRarity.RARE,
             CardTarget.NONE,
             1
     );
@@ -28,7 +28,7 @@ public class Hypothesize extends BaseCard implements InfuseCard {
         super(ID, info);
 
         setInnate(false, true);
-        setMagic(2, 2);
+        setMagic(4);
     }
 
     @Override

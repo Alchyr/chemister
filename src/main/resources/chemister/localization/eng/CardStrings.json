@@ -44,12 +44,11 @@
   },
   "${modID}:TripleThreat": {
     "NAME": "Triple Threat",
-    "DESCRIPTION": "Gain !B! Block. NL Deal !D! damage. NL ${modID}:Withdrawal: ${modID}:Infuse [#f22424]Ignis[]."
+    "DESCRIPTION": "Deal !D! damage. NL Whenever you attack this enemy, gain !M! Vigor. NL Exhaust."
   },
   "${modID}:WildRush": {
     "NAME": "Wild Rush",
-    "DESCRIPTION": "${modID}:Infuse [#90e2e8]Aer[]. NL Deal !D! damage to ALL enemies.",
-    "UPGRADE_DESCRIPTION": "${modID}:Infuse [#90e2e8]Aer[] twice. NL Deal !D! damage to ALL enemies."
+    "DESCRIPTION": "${modID}:Infuse [#90e2e8]Aer[]. NL Deal !D! damage to ALL enemies."
   },
   "${modID}:Neutralization": {
     "NAME": "Neutralization",
@@ -68,7 +67,7 @@
   },
   "${modID}:AdaptiveAssault": {
     "NAME": "Adaptive Assault",
-    "DESCRIPTION": "Deal !D! damage. NL If the enemy intends to attack, ${modID}:Infuse [#bf7330]Terra[]. Otherwise, ${modID}:Infuse [#90e2e8]Aer[]."
+    "DESCRIPTION": "Deal !D! damage. NL If the enemy intends to attack, ${modID}:Infuse [#bf7330]Terra[]. Otherwise, ${modID}:Infuse [#f22424]Ignis[]."
   },
   "${modID}:Leidenfrost": {
     "NAME": "Leidenfrost",
@@ -178,11 +177,12 @@
   },
   "${modID}:SneakySip": {
     "NAME": "Sneaky Sip",
-    "DESCRIPTION": "{@@}The next {!M!|1=time|@=!M! times} you ${modID}:Infuse do{!M!|1=es} not disable ${modID}:Withdrawal effects."
+    "DESCRIPTION": "{@@}Put a random ${modID}:Withdrawal card from your draw pile into your hand.{!M!|1<|1= NL Your next ${modID}:Withdrawal card this turn activate even if you have ${modID}:Infused.|@= NL Your next !M! ${modID}:Withdrawal cards this turn activate even if you have ${modID}:Infused.}",
+    "old desc": "{@@}The next {!M!|1=time|@=!M! times} you ${modID}:Infuse do{!M!|1=es} not disable ${modID}:Withdrawal effects."
   },
   "${modID}:Temperance": {
     "NAME": "Temperance",
-    "DESCRIPTION": "Play the first card in your draw pile that costs !M! or less, play it. NL ${modID}:Withdrawal: Repeat this. NL Exhaust."
+    "DESCRIPTION": "Play the first card in your draw pile that costs !M! or less. NL ${modID}:Withdrawal: Repeat this. NL Exhaust."
   },
   "${modID}:Blitzlixir": {
     "NAME": "Blitz-lixir",
@@ -247,11 +247,11 @@
   },
   "${modID}:TertiaryIngredient": {
     "NAME": "Tertiary Ingredient",
-    "DESCRIPTION": "Can only be played as the third card of your turn. NL Deal !D! damage.",
-    "UPGRADE_DESCRIPTION": "Can only be played as the third or later card of your turn. NL Deal !D! damage.",
+    "DESCRIPTION": "{@@}Can only be played if you have ${modID}:Infused exactly !M! time{!M!|1=|@=s} this turn. NL Deal !D! damage.",
+    "UPGRADE_DESCRIPTION": "{@@}Can only be played if you have ${modID}:Infused exactly !M! time{!M!|1=|@=s} this turn. NL Deal !D! damage.",
     "EXTENDED_DESCRIPTION": [
-      "I haven't played enough cards.",
-      "I've played too many cards."
+      "I haven't Infused enough.",
+      "I've Infused too much."
     ]
   },
   "${modID}:BufferedSolution": {
@@ -316,27 +316,27 @@
   },
   "${modID}:Pyroclasticlysm": {
     "NAME": "Pyroclasticlysm",
-    "DESCRIPTION": "${modID}:Catalyst. NL For !M! turns, whenever you deal unblocked attack damage gain that much Block, and whenever you gain Block, deal that much damage to a random enemy."
+    "DESCRIPTION": "${modID}:Catalyst. NL For !M! turns, whenever you deal attack damage gain !${modID}:M2! Block, and whenever you gain Block, deal !${modID}:M3! damage to a random enemy. NL Exhaust."
   },
   "${modID}:Crystallization": {
     "NAME": "Crystallization",
-    "DESCRIPTION": "${modID}:Catalyst. NL Gain !B! Block for each card in your hand. NL For !M! turns, whenever you Block damage, deal twice as much to a random enemy."
+    "DESCRIPTION": "${modID}:Catalyst. NL Gain !B! Block for each card in your hand. NL For !M! turns, whenever you Block damage, deal twice as much to a random enemy. NL Exhaust."
   },
   "${modID}:Cavitation": {
     "NAME": "Cavitation",
-    "DESCRIPTION": "${modID}:Catalyst. NL For !M! turns, whenever you draw a card, deal damage to a random enemy equal to the total ${modID}:Base of your hand."
+    "DESCRIPTION": "${modID}:Catalyst. NL For !M! turns, whenever you draw a card, deal damage to a random enemy equal to the total ${modID}:Base of your hand. NL Exhaust."
   },
   "${modID}:Convection": {
     "NAME": "Convection",
-    "DESCRIPTION": "${modID}:Catalyst. NL For !M! turns, whenever you play a card for less than its ${modID}:Base, play a copy of it."
+    "DESCRIPTION": "{@@}${modID}:Catalyst. NL {!M!|1=This turn|@=For !M! turns}, whenever you play a card for less than its ${modID}:Base, play a copy of it. NL Exhaust."
   },
   "${modID}:Saltation": {
     "NAME": "Saltation",
-    "DESCRIPTION": "${modID}:Catalyst. NL For !M! turns, whenever you gain Block, draw a card. NL When your hand is full, reduce the cost of your hand to 0 for the turn and become unable to draw additional cards for the turn."
+    "DESCRIPTION": "${modID}:Catalyst. NL For !M! turns, whenever you gain Block, draw a card. NL When your hand is full, reduce the cost of your hand to 0 for the turn and become unable to draw additional cards for the turn. NL Exhaust."
   },
   "${modID}:Effervescence": {
     "NAME": "Effervescence",
-    "DESCRIPTION": "${modID}:Catalyst. NL Scry !M!. NL Play !M! copies of the top card of your draw pile."
+    "DESCRIPTION": "${modID}:Catalyst. NL Scry !M!. NL Play the top card of your draw pile !M! times and Exhaust it. NL Exhaust."
   },
   "${modID}:Ashes": {
     "NAME": "Ashes",

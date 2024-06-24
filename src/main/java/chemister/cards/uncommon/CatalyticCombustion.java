@@ -4,7 +4,6 @@ import chemister.actions.CatalyticCombustionAction;
 import chemister.actions.ResetCatalystAction;
 import chemister.cards.CatalystCard;
 import chemister.character.Chemister;
-import chemister.powers.SeismicShellPower;
 import chemister.util.CardStats;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -17,7 +16,7 @@ public class CatalyticCombustion extends CatalystCard {
             CardType.ATTACK,
             CardRarity.UNCOMMON,
             CardTarget.NONE,
-            10
+            6
     );
 
     private static final Chemister.Flasks[] flasks = new Chemister.Flasks[] {
@@ -28,7 +27,7 @@ public class CatalyticCombustion extends CatalystCard {
         super(ID, info, flasks);
 
         setDamage(50);
-        setCostUpgrade(8);
+        setCostUpgrade(5);
     }
 
     @Override

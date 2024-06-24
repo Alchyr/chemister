@@ -20,7 +20,7 @@ public abstract class CatalystCard extends BaseCard {
         int modifyCatalystDiscount(int discount);
     }
     public static int getDiscount() {
-        int discount = 2;
+        int discount = 1;
         for (AbstractRelic r : AbstractDungeon.player.relics) {
             if (r instanceof CatalystDiscountRelic) {
                 discount = ((CatalystDiscountRelic) r).modifyCatalystDiscount(discount);

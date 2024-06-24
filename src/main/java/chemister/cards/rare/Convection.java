@@ -15,7 +15,7 @@ public class Convection extends CatalystCard {
             CardType.SKILL,
             CardRarity.RARE,
             CardTarget.SELF,
-            15
+            10
     );
 
     private static final Chemister.Flasks[] flasks = new Chemister.Flasks[] {
@@ -26,8 +26,9 @@ public class Convection extends CatalystCard {
     public Convection() {
         super(ID, info, flasks);
 
-        setCostUpgrade(12);
-        setMagic(3);
+        setCostUpgrade(8);
+        setMagic(2);
+        setExhaust(true);
     }
 
     @Override

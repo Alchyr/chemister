@@ -4,7 +4,6 @@ import chemister.actions.ResetCatalystAction;
 import chemister.cards.CatalystCard;
 import chemister.character.Chemister;
 import chemister.powers.CrystallizationPower;
-import chemister.powers.PyroclasticlysmPower;
 import chemister.util.CardStats;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -21,7 +20,7 @@ public class Crystallization extends CatalystCard {
             CardType.SKILL,
             CardRarity.RARE,
             CardTarget.SELF,
-            15
+            10
     );
 
     private static final Chemister.Flasks[] flasks = new Chemister.Flasks[] {
@@ -32,9 +31,10 @@ public class Crystallization extends CatalystCard {
     public Crystallization() {
         super(ID, info, flasks);
 
-        setCostUpgrade(12);
+        setCostUpgrade(8);
         setBlock(5);
-        setMagic(3);
+        setMagic(2);
+        setExhaust(true);
     }
 
     @Override

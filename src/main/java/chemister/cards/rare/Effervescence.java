@@ -19,7 +19,7 @@ public class Effervescence extends CatalystCard {
             CardType.SKILL,
             CardRarity.RARE,
             CardTarget.NONE,
-            15
+            10
     );
 
     private static final Chemister.Flasks[] flasks = new Chemister.Flasks[] {
@@ -30,8 +30,9 @@ public class Effervescence extends CatalystCard {
     public Effervescence() {
         super(ID, info, flasks);
 
-        setCostUpgrade(12);
+        setCostUpgrade(8);
         setMagic(5);
+        setExhaust(true);
     }
 
     @Override
@@ -50,6 +51,6 @@ public class Effervescence extends CatalystCard {
         addToBot(new ScryAction(magicNumber));
 
         //int amt = ChemisterMod.getCardBase(this);
-        addToBot(new EffervescenceAction(magicNumber, true));
+        addToBot(new EffervescenceAction(magicNumber, true, true));
     }
 }

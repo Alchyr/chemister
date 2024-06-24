@@ -4,7 +4,7 @@ import chemister.ChemisterMod;
 import chemister.cards.CatalystCard;
 import chemister.character.Chemister;
 import chemister.powers.FlaskFracturePower;
-import chemister.powers.SneakySipPower;
+import chemister.powers.SneakySipOldPower;
 import chemister.relics.starter.FlaskRelic;
 import chemister.util.GeneralUtils;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
@@ -45,12 +45,12 @@ public class InfuseAction extends AbstractGameAction implements DisplayableActio
 
     @Override
     public void update() {
-        AbstractPower p = AbstractDungeon.player.getPower(SneakySipPower.POWER_ID);
-        SneakySipPower sneaky = null;
+        AbstractPower p = AbstractDungeon.player.getPower(SneakySipOldPower.POWER_ID);
+        SneakySipOldPower sneaky = null;
         FlaskFracturePower fracture = null;
 
-        if (p instanceof SneakySipPower)
-            sneaky = (SneakySipPower) p;
+        if (p instanceof SneakySipOldPower)
+            sneaky = (SneakySipOldPower) p;
 
         p = AbstractDungeon.player.getPower(FlaskFracturePower.POWER_ID);
         if (p instanceof FlaskFracturePower) {

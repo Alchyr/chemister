@@ -38,7 +38,7 @@ public class CascadeCrush extends BaseCard implements InfuseCard {
         isMultiDamage = true;
 
         setInnate(false, true);
-        setDamage(30);
+        setDamage(24);
         setMagic(1, 0);
     }
 

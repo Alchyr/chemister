@@ -1,12 +1,11 @@
 package chemister.cards.uncommon;
 
+import chemister.ChemisterMod;
 import chemister.cards.BaseCard;
 import chemister.character.Chemister;
-import chemister.patches.NoUseVigorPatch;
 import chemister.util.CardStats;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class TertiaryIngredient extends BaseCard {
@@ -16,22 +15,23 @@ public class TertiaryIngredient extends BaseCard {
             CardType.ATTACK,
             CardRarity.UNCOMMON,
             CardTarget.ENEMY,
-            3
+            2
     );
 
     public TertiaryIngredient() {
         super(ID, info);
 
-        setDamage(33, 9);
+        setDamage(33);
+        setMagic(2);
     }
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        if (AbstractDungeon.actionManager.cardsPlayedThisTurn.size() < 2) {
+        if (ChemisterMod.infusedTypesThisTurn.size() < magicNumber) {
             this.cantUseMessage = cardStrings.EXTENDED_DESCRIPTION[0];
             return false;
         }
-        if (!upgraded && AbstractDungeon.actionManager.cardsPlayedThisTurn.size() > 2) {
+        if (!upgraded && ChemisterMod.infusedTypesThisTurn.size() > magicNumber) {
             this.cantUseMessage = cardStrings.EXTENDED_DESCRIPTION[1];
             return false;
         }

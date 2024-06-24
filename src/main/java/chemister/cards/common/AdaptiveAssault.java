@@ -6,12 +6,8 @@ import chemister.character.Chemister;
 import chemister.util.CardStats;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.StrengthPower;
-import com.megacrit.cardcrawl.vfx.ThoughtBubble;
 
 public class AdaptiveAssault extends BaseCard implements InfuseCard {
     public static final String ID = makeID(AdaptiveAssault.class.getSimpleName());
@@ -25,13 +21,13 @@ public class AdaptiveAssault extends BaseCard implements InfuseCard {
 
     private static final Chemister.Flasks[] flasks = new Chemister.Flasks[] {
             Chemister.Flasks.TERRA,
-            Chemister.Flasks.AER
+            Chemister.Flasks.IGNIS
     };
     private static final Chemister.Flasks[] terra = new Chemister.Flasks[] {
             Chemister.Flasks.TERRA
     };
-    private static final Chemister.Flasks[] aer = new Chemister.Flasks[] {
-            Chemister.Flasks.TERRA
+    private static final Chemister.Flasks[] ignis = new Chemister.Flasks[] {
+            Chemister.Flasks.IGNIS
     };
 
     private Chemister.Flasks[] tempFlasks = flasks;
@@ -55,7 +51,7 @@ public class AdaptiveAssault extends BaseCard implements InfuseCard {
             tempFlasks = terra;
         }
         else {
-            tempFlasks = aer;
+            tempFlasks = ignis;
         }
     }
 
@@ -68,9 +64,9 @@ public class AdaptiveAssault extends BaseCard implements InfuseCard {
                 isDone = true;
 
                 if (m != null && m.getIntentBaseDmg() >= 0) {
-                    infuse(Chemister.Flasks.TERRA);
+                    infuseTop(Chemister.Flasks.TERRA);
                 } else {
-                    infuse(Chemister.Flasks.AER);
+                    infuseTop(Chemister.Flasks.IGNIS);
                 }
             }
         });

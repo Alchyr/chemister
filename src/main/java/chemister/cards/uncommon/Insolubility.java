@@ -1,4 +1,4 @@
-package chemister.cards.rare;
+package chemister.cards.uncommon;
 
 import chemister.cards.BaseCard;
 import chemister.character.Chemister;
@@ -13,7 +13,7 @@ public class Insolubility extends BaseCard {
     private static final CardStats info = new CardStats(
             Chemister.Meta.CARD_COLOR,
             CardType.SKILL,
-            CardRarity.RARE,
+            CardRarity.UNCOMMON,
             CardTarget.SELF,
             1
     );

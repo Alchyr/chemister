@@ -4,7 +4,6 @@ import basemod.BaseMod;
 import chemister.actions.ResetCatalystAction;
 import chemister.cards.CatalystCard;
 import chemister.character.Chemister;
-import chemister.powers.SeismicShellPower;
 import chemister.util.CardStats;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.unique.ExpertiseAction;
@@ -19,7 +18,7 @@ public class MomentousMaelstrom extends CatalystCard {
             CardType.SKILL,
             CardRarity.UNCOMMON,
             CardTarget.NONE,
-            10
+            6
     );
 
     private static final Chemister.Flasks[] flasks = new Chemister.Flasks[] {
@@ -29,7 +28,7 @@ public class MomentousMaelstrom extends CatalystCard {
     public MomentousMaelstrom() {
         super(ID, info, flasks);
 
-        setCostUpgrade(8);
+        setCostUpgrade(5);
     }
 
     @Override

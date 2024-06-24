@@ -25,23 +25,23 @@ public class WildRush extends BaseCard implements InfuseCard {
     private static final Chemister.Flasks[] flasks = new Chemister.Flasks[] {
             Chemister.Flasks.AER
     };
-    private static final Chemister.Flasks[] upgFlasks = new Chemister.Flasks[] {
+    /*private static final Chemister.Flasks[] upgFlasks = new Chemister.Flasks[] {
             Chemister.Flasks.AER,
             Chemister.Flasks.AER
-    };
+    };*/
 
     public WildRush() {
         super(ID, info);
 
         isMultiDamage = true;
-        setDamage(10, 2);
+        setDamage(11, 4);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         infuse(Chemister.Flasks.AER);
-        if (upgraded)
-            infuse(Chemister.Flasks.AER);
+        /*if (upgraded)
+            infuse(Chemister.Flasks.AER);*/
 
         this.addToBot(new SFXAction("ATTACK_HEAVY"));
         this.addToBot(new VFXAction(p, new CleaveEffect(), 0.1F));
@@ -55,6 +55,6 @@ public class WildRush extends BaseCard implements InfuseCard {
 
     @Override
     public Chemister.Flasks[] getFlasks() {
-        return upgraded ? upgFlasks : flasks;
+        return flasks;//upgraded ? upgFlasks : flasks;
     }
 }

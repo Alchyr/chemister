@@ -863,6 +863,9 @@ public abstract class BaseCard extends CustomCard {
     protected void infuse(Chemister.Flasks flask) {
         addToBot(new InfuseAction(flask));
     }
+    protected void infuseTop(Chemister.Flasks flask) {
+        addToTop(new InfuseAction(flask));
+    }
 
     protected ApplyPowerAction applySingle(AbstractCreature c, AbstractPower power)
     {

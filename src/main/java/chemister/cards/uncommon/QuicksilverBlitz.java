@@ -16,7 +16,7 @@ public class QuicksilverBlitz extends CatalystCard {
             CardType.ATTACK,
             CardRarity.UNCOMMON,
             CardTarget.ENEMY,
-            10
+            6
     );
 
     private static final Chemister.Flasks[] flasks = new Chemister.Flasks[] {
@@ -26,7 +26,7 @@ public class QuicksilverBlitz extends CatalystCard {
     public QuicksilverBlitz() {
         super(ID, info, flasks);
 
-        setCostUpgrade(8);
+        setCostUpgrade(5);
         setDamage(30);
         setMagic(5);
     }

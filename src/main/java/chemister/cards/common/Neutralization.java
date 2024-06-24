@@ -18,7 +18,7 @@ public class Neutralization extends CatalystCard {
             CardType.ATTACK,
             CardRarity.COMMON,
             CardTarget.ENEMY,
-            5
+            3
     );
 
     private static final Chemister.Flasks[] flasks = new Chemister.Flasks[] {
@@ -31,7 +31,7 @@ public class Neutralization extends CatalystCard {
     public Neutralization() {
         super(ID, info, flasks);
 
-        setCostUpgrade(3);
+        setCostUpgrade(2);
         setDamage(0);
     }
 

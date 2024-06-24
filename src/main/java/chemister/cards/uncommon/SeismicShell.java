@@ -15,7 +15,7 @@ public class SeismicShell extends CatalystCard {
             CardType.SKILL,
             CardRarity.UNCOMMON,
             CardTarget.SELF,
-            10
+            6
     );
 
     private static final Chemister.Flasks[] flasks = new Chemister.Flasks[] {
@@ -25,7 +25,7 @@ public class SeismicShell extends CatalystCard {
     public SeismicShell() {
         super(ID, info, flasks);
 
-        setCostUpgrade(8);
+        setCostUpgrade(5);
         setBlock(30);
     }
 

@@ -18,7 +18,7 @@ public class EfficientPlanning extends CatalystCard {
             CardType.SKILL,
             CardRarity.COMMON,
             CardTarget.NONE,
-            7
+            4
     );
 
     private static final Chemister.Flasks[] flasks = new Chemister.Flasks[] {
@@ -31,7 +31,7 @@ public class EfficientPlanning extends CatalystCard {
     public EfficientPlanning() {
         super(ID, info, flasks);
 
-        setCostUpgrade(5);
+        setCostUpgrade(3);
         setMagic(1);
     }
 

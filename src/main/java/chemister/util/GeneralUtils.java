@@ -53,6 +53,9 @@ public class GeneralUtils {
         while (retVal.size() > amt) {
             retVal.remove(AbstractDungeon.cardRng.random(retVal.size() - 1));
         }
+        for (int i = 0; i < retVal.size(); ++i) {
+            retVal.set(i, retVal.get(i).makeCopy());
+        }
         return retVal;
     }
 
