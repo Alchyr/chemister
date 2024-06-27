@@ -32,7 +32,7 @@
       "catalyst",
       "catalysts"
     ],
-    "DESCRIPTION": "Cost is reduced by #b2 whenever you #yInfuse a #yFlask shown on the left of this card. When played, resets the cost of ALL cards with the same name. This card's cost cannot be randomized."
+    "DESCRIPTION": "Cost is reduced by #b1 whenever you #yInfuse a #yFlask shown on the left of this card. When played, resets the cost of ALL cards with the same name. This card's cost cannot be randomized."
   },
   {
     "PROPER_NAME": "Base",

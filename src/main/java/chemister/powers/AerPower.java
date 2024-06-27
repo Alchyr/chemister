@@ -5,13 +5,11 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.NonStackablePower;
 import com.megacrit.cardcrawl.actions.common.ReduceCostForTurnAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
-import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
 import static chemister.ChemisterMod.makeID;
 
@@ -29,21 +27,6 @@ public class AerPower extends BasePower implements NonStackablePower {
 
         if (times > 1) renderSecondAmount = true;
         updateDescription();
-    }
-
-    @Override
-    public void onUseCard(AbstractCard card, UseCardAction action) {
-        //happens before energy is spent
-        int spent;
-        if (card.freeToPlay() || card.cost < -1) {
-            spent = 0;
-        }
-        else if (card.cost == -1) {
-            spent = EnergyPanel.totalCount;
-        }
-        else {
-            spent = Math.min(EnergyPanel.totalCount, card.costForTurn);
-        }
     }
 
     @Override

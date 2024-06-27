@@ -85,8 +85,8 @@
   "${modID}:PyroclasticlysmPower": {
     "NAME": "Pyroclasticlysm",
     "DESCRIPTIONS": [
-      "This turn, whenever you deal unblocked attack damage gain that much #yBlock, and whenever you gain #yBlock, deal that much damage to a random enemy.",
-      "For #b%d turns, whenever you deal unblocked attack damage gain that much #yBlock, and whenever you gain #yBlock, deal that much damage to a random enemy."
+      "This turn, whenever you deal unblocked attack damage gain #b%d #yBlock, and whenever you gain #yBlock, deal #b%d damage to a random enemy.",
+      "For #b%d turns, whenever you deal unblocked attack damage gain #b%d #yBlock, and whenever you gain #yBlock, deal #b%d damage to a random enemy."
     ]
   },
   "${modID}:CrystallizationPower": {

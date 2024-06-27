@@ -15,7 +15,7 @@ public class TertiaryIngredient extends BaseCard {
             CardType.ATTACK,
             CardRarity.UNCOMMON,
             CardTarget.ENEMY,
-            2
+            3
     );
 
     public TertiaryIngredient() {

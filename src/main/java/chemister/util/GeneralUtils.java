@@ -94,8 +94,9 @@ public class GeneralUtils {
         if (!c.freeToPlay()) {
             if (c.cost <= -2) {
                 return 0;
-            } else if (c.cost == -1)
+            } else if (c.cost == -1) {
                 return EnergyPanel.totalCount;
+            }
             return c.costForTurn;
         }
         return 0;

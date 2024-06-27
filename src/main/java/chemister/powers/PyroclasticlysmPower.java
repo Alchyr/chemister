@@ -20,10 +20,12 @@ public class PyroclasticlysmPower extends BasePower implements NonStackablePower
     private int damageForBlock;
 
     public PyroclasticlysmPower(AbstractCreature owner, int amount, int blockForDamage, int damageForBlock) {
-        super(POWER_ID, PowerType.BUFF, TURN_BASED, owner, amount);
+        super(POWER_ID, PowerType.BUFF, TURN_BASED, owner, null, amount, false);
 
         this.blockForDamage = blockForDamage;
         this.damageForBlock = damageForBlock;
+
+        updateDescription();
     }
 
     @Override
@@ -77,7 +79,7 @@ public class PyroclasticlysmPower extends BasePower implements NonStackablePower
     @Override
     public void updateDescription() {
         this.description =
-                amount == 1 ? DESCRIPTIONS[0] :
-                        String.format(DESCRIPTIONS[1], amount);
+                amount == 1 ? String.format(DESCRIPTIONS[0], blockForDamage, damageForBlock) :
+                        String.format(DESCRIPTIONS[1], amount, blockForDamage, damageForBlock);
     }
 }

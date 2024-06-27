@@ -34,7 +34,7 @@ public class Temperance extends WithdrawalCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ConditionalPlayTopCardAction((card)->GeneralUtils.getLogicalCardCost(card) <= magicNumber));
+        withdrawalEffect(p, m);
         if (!infusedThisTurn()) {
             queueWithdrawalEffect(p, m);
         }
@@ -42,7 +42,7 @@ public class Temperance extends WithdrawalCard {
 
     @Override
     public void withdrawalEffect(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ConditionalPlayTopCardAction((card)->GeneralUtils.getLogicalCardCost(card) <= magicNumber));
+        addToBot(new PlayFirstMeetingConditionAction((card)->GeneralUtils.getLogicalCardCost(card) <= magicNumber));
     }
 
     private static class ConditionalPlayTopCardAction extends AbstractGameAction {
@@ -58,6 +58,28 @@ public class Temperance extends WithdrawalCard {
             if (!condition.test(AbstractDungeon.player.drawPile.getTopCard())) return;
 
             addToTop(new PlayCardAction(AbstractDungeon.player.drawPile.getTopCard(), AbstractDungeon.player.drawPile, false, false));
+        }
+    }
+
+    private static class PlayFirstMeetingConditionAction extends AbstractGameAction {
+        private final Predicate<AbstractCard> condition;
+        public PlayFirstMeetingConditionAction(Predicate<AbstractCard> condition) {
+            this.condition = condition;
+        }
+
+        @Override
+        public void update() {
+            isDone = true;
+            if (AbstractDungeon.player.drawPile.isEmpty()) return;
+
+            int i = AbstractDungeon.player.drawPile.size() - 1;
+            for (; i >= 0; i--) {
+                AbstractCard c = AbstractDungeon.player.drawPile.group.get(i);
+                if (condition.test(c)) {
+                    addToTop(new PlayCardAction(c, AbstractDungeon.player.drawPile, false, false));
+                    return;
+                }
+            }
         }
     }
 }

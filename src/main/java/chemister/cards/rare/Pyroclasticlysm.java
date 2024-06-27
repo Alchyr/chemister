@@ -27,7 +27,7 @@ public class Pyroclasticlysm extends CatalystCard {
         super(ID, info, flasks);
 
         setCostUpgrade(8);
-        setMagic(3);
+        setMagic(2);
         setCustomVar("M2", 3);
         setCustomVar("M3", 7);
         setExhaust(true);

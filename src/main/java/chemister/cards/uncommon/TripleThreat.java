@@ -23,6 +23,7 @@ public class TripleThreat extends BaseCard {
 
         setDamage(7, 2);
         setMagic(2, 1);
+        setExhaust(true);
     }
 
     @Override

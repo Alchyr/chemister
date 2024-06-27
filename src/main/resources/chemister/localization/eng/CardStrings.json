@@ -177,7 +177,7 @@
   },
   "${modID}:SneakySip": {
     "NAME": "Sneaky Sip",
-    "DESCRIPTION": "{@@}Put a random ${modID}:Withdrawal card from your draw pile into your hand.{!M!|1<|1= NL Your next ${modID}:Withdrawal card this turn activate even if you have ${modID}:Infused.|@= NL Your next !M! ${modID}:Withdrawal cards this turn activate even if you have ${modID}:Infused.}",
+    "DESCRIPTION": "{@@}Put a random ${modID}:Withdrawal card from your draw pile into your hand.{!M!|<1=|1= NL Your next ${modID}:Withdrawal card this turn activates even if you have ${modID}:Infused.|@= NL Your next !M! ${modID}:Withdrawal cards this turn activate even if you have ${modID}:Infused.}",
     "old desc": "{@@}The next {!M!|1=time|@=!M! times} you ${modID}:Infuse do{!M!|1=es} not disable ${modID}:Withdrawal effects."
   },
   "${modID}:Temperance": {
@@ -248,7 +248,7 @@
   "${modID}:TertiaryIngredient": {
     "NAME": "Tertiary Ingredient",
     "DESCRIPTION": "{@@}Can only be played if you have ${modID}:Infused exactly !M! time{!M!|1=|@=s} this turn. NL Deal !D! damage.",
-    "UPGRADE_DESCRIPTION": "{@@}Can only be played if you have ${modID}:Infused exactly !M! time{!M!|1=|@=s} this turn. NL Deal !D! damage.",
+    "UPGRADE_DESCRIPTION": "{@@}Can only be played if you have ${modID}:Infused at least !M! time{!M!|1=|@=s} this turn. NL Deal !D! damage.",
     "EXTENDED_DESCRIPTION": [
       "I haven't Infused enough.",
       "I've Infused too much."
