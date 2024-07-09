@@ -23,6 +23,9 @@ public class PlayCardAction extends AbstractGameAction {
         this.source = AbstractDungeon.player;
         this.card = cardToUse;
 
+        this.sourceGroup = source;
+        this.exhaustCards = exhausts;
+
         if (randomPosition) {
             card.current_x = card.target_x = MathUtils.random(0.1F, 0.9F) * (float)Settings.WIDTH;
             card.target_y = MathUtils.random(0.2F, 0.8F) * (float)Settings.HEIGHT;
@@ -45,9 +48,6 @@ public class PlayCardAction extends AbstractGameAction {
                 AbstractDungeon.player.limbo.addToBottom(card);
             }
         }
-
-        this.sourceGroup = source;
-        this.exhaustCards = exhausts;
     }
     public PlayCardAction(AbstractCard cardToUse, CardGroup source, boolean randomPosition, boolean exhausts) {
         this(cardToUse, null, randomPosition, source, exhausts && (source != null));
@@ -81,7 +81,9 @@ public class PlayCardAction extends AbstractGameAction {
                 sourceGroup.removeCard(card);
                 AbstractDungeon.getCurrRoom().souls.remove(card);
 
-                AbstractDungeon.player.limbo.group.add(card);
+                if (!AbstractDungeon.player.limbo.contains(card)) {
+                    AbstractDungeon.player.limbo.addToTop(card);
+                }
 
                 card.target_x = (float)Settings.WIDTH / 2.0F + 200.0F * Settings.scale;
                 card.target_y = (float)Settings.HEIGHT / 2.0F;
@@ -92,7 +94,7 @@ public class PlayCardAction extends AbstractGameAction {
 
                 card.applyPowers();
                 this.addToTop(new NewQueueCardAction(card, true, false, true));
-                this.addToTop(new UnlimboAction(card));
+                this.addToTop(new CompletelyUnlimboAction(card));
                 if (!Settings.FAST_MODE) {
                     this.addToTop(new WaitAction(Settings.ACTION_DUR_MED));
                 } else {
