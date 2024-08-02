@@ -8,8 +8,8 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class TripleThreat extends BaseCard {
-    public static final String ID = makeID(TripleThreat.class.getSimpleName());
+public class Neutralization extends BaseCard {
+    public static final String ID = makeID(Neutralization.class.getSimpleName());
     private static final CardStats info = new CardStats(
             Chemister.Meta.CARD_COLOR,
             CardType.ATTACK,
@@ -18,7 +18,7 @@ public class TripleThreat extends BaseCard {
             1
     );
 
-    public TripleThreat() {
+    public Neutralization() {
         super(ID, info);
 
         setDamage(7, 2);

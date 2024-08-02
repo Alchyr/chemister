@@ -24,25 +24,31 @@ public class FlexibleDiscoveryAction extends AbstractGameAction {
     private boolean skippable;
 
     public FlexibleDiscoveryAction(ArrayList<AbstractCard> cards, boolean costsZeroThisTurn) {
-        this(cards, costsZeroThisTurn, false, null, null);
+        this(cards, 1, costsZeroThisTurn, false, null, null);
+    }
+
+
+    public FlexibleDiscoveryAction(ArrayList<AbstractCard> cards, int amount, boolean costsZeroThisTurn) {
+        this(cards, amount, costsZeroThisTurn, false, null, null);
     }
 
     public FlexibleDiscoveryAction(ArrayList<AbstractCard> cards, boolean costsZeroThisTurn, AbstractCardModifier cardModifier) {
-        this(cards, costsZeroThisTurn, false, null, cardModifier);
+        this(cards, 1, costsZeroThisTurn, false, null, cardModifier);
     }
 
     public FlexibleDiscoveryAction(ArrayList<AbstractCard> cards, Consumer<AbstractCard> callback, boolean costsZeroThisTurn) {
-        this(cards,costsZeroThisTurn, false, callback, null);
+        this(cards, 1, costsZeroThisTurn, false, callback, null);
     }
     public FlexibleDiscoveryAction(ArrayList<AbstractCard> cards, boolean costsZeroThisTurn, boolean skippable, AbstractCardModifier cardModifier)
     {
-        this(cards, costsZeroThisTurn, skippable,null,  cardModifier);
+        this(cards, 1, costsZeroThisTurn, skippable,null,  cardModifier);
     }
 
-    public FlexibleDiscoveryAction(ArrayList<AbstractCard> cards, boolean costsZeroThisTurn, boolean skippable,  Consumer<AbstractCard> callback, AbstractCardModifier cardModifier) {
+    public FlexibleDiscoveryAction(ArrayList<AbstractCard> cards, int amount, boolean costsZeroThisTurn, boolean skippable,  Consumer<AbstractCard> callback, AbstractCardModifier cardModifier) {
         this.actionType = ActionType.CARD_MANIPULATION;
         this.duration = Settings.ACTION_DUR_FAST;
         this.cards = cards;
+        this.amount = amount;
         this.costsZeroThisTurn = costsZeroThisTurn;
         this.cardModifier = cardModifier;
         this.callback = callback;
@@ -74,10 +80,36 @@ public class FlexibleDiscoveryAction extends AbstractGameAction {
                         CardModifierManager.addModifier(disCard, cardModifier);
                     }
                     disCard.current_x = -1000.0F * Settings.scale;
-                    if (AbstractDungeon.player.hand.size() < BaseMod.MAX_HAND_SIZE) {
-                        AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(disCard, (float)Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
-                    } else {
-                        AbstractDungeon.effectList.add(new ShowCardAndAddToDiscardEffect(disCard, (float)Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
+
+                    if (amount == 1) {
+                        if (AbstractDungeon.player.hand.size() < BaseMod.MAX_HAND_SIZE) {
+                            AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(disCard, (float)Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
+                        } else {
+                            AbstractDungeon.effectList.add(new ShowCardAndAddToDiscardEffect(disCard, (float)Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
+                        }
+                    }
+                    else {
+
+                        if (AbstractDungeon.player.hand.size() + this.amount <= BaseMod.MAX_HAND_SIZE) {
+                            AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(disCard, (float)Settings.WIDTH / 2.0F - AbstractCard.IMG_WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
+
+                            for (int i = 1; i < amount; ++i) {
+                                AbstractCard disCard2 = AbstractDungeon.cardRewardScreen.discoveryCard.makeStatEquivalentCopy();
+                                AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(disCard2, (float)Settings.WIDTH / 2.0F + AbstractCard.IMG_WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
+                            }
+                        } else if (AbstractDungeon.player.hand.size() == BaseMod.MAX_HAND_SIZE - 1) {
+                            AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(disCard, (float)Settings.WIDTH / 2.0F - AbstractCard.IMG_WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
+                            for (int i = 1; i < amount; ++i) {
+                                AbstractCard disCard2 = AbstractDungeon.cardRewardScreen.discoveryCard.makeStatEquivalentCopy();
+                                AbstractDungeon.effectList.add(new ShowCardAndAddToDiscardEffect(disCard2, (float) Settings.WIDTH / 2.0F + AbstractCard.IMG_WIDTH / 2.0F, (float) Settings.HEIGHT / 2.0F));
+                            }
+                        } else {
+                            AbstractDungeon.effectList.add(new ShowCardAndAddToDiscardEffect(disCard, (float)Settings.WIDTH / 2.0F - AbstractCard.IMG_WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
+                            for (int i = 1; i < amount; ++i) {
+                                disCard = AbstractDungeon.cardRewardScreen.discoveryCard.makeStatEquivalentCopy();
+                                AbstractDungeon.effectList.add(new ShowCardAndAddToDiscardEffect(disCard, (float)Settings.WIDTH / 2.0F + AbstractCard.IMG_WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
+                            }
+                        }
                     }
 
                     AbstractDungeon.cardRewardScreen.discoveryCard = null;

@@ -42,24 +42,24 @@
       "Single Displacement"
     ]
   },
-  "${modID}:TripleThreat": {
-    "NAME": "Triple Threat",
+  "${modID}:Neutralization": {
+    "NAME": "Neutralization",
     "DESCRIPTION": "Deal !D! damage. NL Whenever you attack this enemy, gain !M! Vigor. NL Exhaust."
   },
   "${modID}:WildRush": {
     "NAME": "Wild Rush",
     "DESCRIPTION": "${modID}:Infuse [#90e2e8]Aer[]. NL Deal !D! damage to ALL enemies."
   },
-  "${modID}:Neutralization": {
-    "NAME": "Neutralization",
-    "DESCRIPTION": "${modID}:Catalyst. NL Deal damage equal to the total ${modID}:Base of your hand.",
-    "EXTENDED_DESCRIPTION": [
-      " NL (Deals !D! damage.)"
-    ]
+  "${modID}:TripleThreat": {
+    "NAME": "Triple Threat",
+    "DESCRIPTION": "${modID}:Catalyst. NL Deal !D! damage !M! times."
   },
   "${modID}:DustUp": {
     "NAME": "Dust-Up",
-    "DESCRIPTION": "Deal !D! damage. NL If you ${modID}:Infused [#bf7330]Terra[] this turn, gain !B! Block."
+    "DESCRIPTION": "${modID}:Infuse [#bf7330]Terra[]. NL Gain !B! Block. NL Deal damage equal to your Block.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (Deals !D! damage.)"
+    ]
   },
   "${modID}:BlisterBlast": {
     "NAME": "Blister Blast",
@@ -91,8 +91,8 @@
   },
   "${modID}:ThinkFast": {
     "NAME": "Think Fast!",
-    "DESCRIPTION": "${modID}:Infuse a random Flask. NL ${modID}:Withdrawal: ${modID}:Infuse [#4f52ff]Aqua[] instead. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "${modID}:Infuse a random Flask. NL ${modID}:Withdrawal: ${modID}:Infuse [#4f52ff]Aqua[] instead."
+    "DESCRIPTION": "${modID}:Infuse a random Flask. NL ${modID}:Withdrawal: ${modID}:Infuse [#4f52ff]Aqua[] and [#f22424]Ignis[] instead. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "${modID}:Infuse a random Flask. NL ${modID}:Withdrawal: ${modID}:Infuse [#4f52ff]Aqua[] and [#f22424]Ignis[] instead."
   },
   "${modID}:MoltenMettle": {
     "NAME": "Molten Mettle",
@@ -230,8 +230,11 @@
   },
   "${modID}:SuddenSurge": {
     "NAME": "Sudden Surge",
-    "DESCRIPTION": "${modID}:Infuse [#4f52ff]Aqua[]. NL Deal damage equal to the total ${modID}:Base of the cards drawn. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Scry !M!. NL ${modID}:Infuse [#4f52ff]Aqua[]. NL Deal damage equal to the total ${modID}:Base of the cards drawn. NL Exhaust."
+    "DESCRIPTION": "${modID}:Infuse [#4f52ff]Aqua[]. NL Deal !M! damage for each card drawn this turn. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "${modID}:Infuse [#4f52ff]Aqua[]. NL Deal !M! damage for each card drawn this turn.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (Deals !D! damage.)"
+    ]
   },
   "${modID}:WhirlingDebris": {
     "NAME": "Whirling Debris",
@@ -332,7 +335,7 @@
   },
   "${modID}:Saltation": {
     "NAME": "Saltation",
-    "DESCRIPTION": "${modID}:Catalyst. NL For !M! turns, whenever you gain Block, draw a card. NL When your hand is full, reduce the cost of your hand to 0 for the turn and become unable to draw additional cards for the turn. NL Exhaust."
+    "DESCRIPTION": "${modID}:Catalyst. NL For !M! turns, whenever you gain Block, draw a card. NL When your hand is full, play your hand and end your turn. NL Exhaust."
   },
   "${modID}:Effervescence": {
     "NAME": "Effervescence",

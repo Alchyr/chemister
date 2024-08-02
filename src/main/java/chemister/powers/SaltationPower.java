@@ -1,12 +1,15 @@
 package chemister.powers;
 
 import basemod.BaseMod;
+import basemod.helpers.CardModifierManager;
+import chemister.actions.PlayCardAction;
+import chemister.cardmods.EndTurnIfAllPlayedModifier;
 import chemister.patches.OnRefreshHandPatch;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
-import com.megacrit.cardcrawl.actions.unique.ApplyBulletTimeAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.NoDrawPower;
@@ -36,8 +39,20 @@ public class SaltationPower extends BasePower implements OnRefreshHandPatch.OnRe
             triggeredThisTurn = true;
 
             this.flash();
-            addToTop(new ApplyBulletTimeAction());
-            addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new NoDrawPower(AbstractDungeon.player), 1));
+
+            addToTop(new AbstractGameAction() {
+                @Override
+                public void update() {
+                    isDone = true;
+
+                    addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new NoDrawPower(AbstractDungeon.player), 1));
+                    for (AbstractCard c : AbstractDungeon.player.hand.group) {
+                        addToBot(new PlayCardAction(c, AbstractDungeon.player.hand, false, false));
+                        CardModifierManager.addModifier(c, new EndTurnIfAllPlayedModifier(AbstractDungeon.player.hand.group));
+                    }
+
+                }
+            });
         }
     }
 

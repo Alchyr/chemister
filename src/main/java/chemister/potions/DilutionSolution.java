@@ -49,6 +49,6 @@ public class DilutionSolution extends BasePotion {
         addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new DilutionPower(AbstractDungeon.player, 1)));
 
         CardGroup cards = GeneralUtils.filterCardsForDiscovery(c -> c instanceof WithdrawalCard && !c.hasTag(AbstractCard.CardTags.HEALING) && c.rarity != AbstractCard.CardRarity.SPECIAL && c.rarity != AbstractCard.CardRarity.BASIC);
-        addToBot(new FlexibleDiscoveryAction(GeneralUtils.createCardsForDiscovery(cards, 3), true));
+        addToBot(new FlexibleDiscoveryAction(GeneralUtils.createCardsForDiscovery(cards, 3), potency, true));
     }
 }

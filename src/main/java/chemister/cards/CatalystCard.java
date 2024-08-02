@@ -29,8 +29,6 @@ public abstract class CatalystCard extends BaseCard {
         return -discount;
     }
 
-
-
     private int baseCost;
     private final Chemister.Flasks[] flasks;
 

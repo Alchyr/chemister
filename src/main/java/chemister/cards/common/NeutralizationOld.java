@@ -1,5 +1,6 @@
 package chemister.cards.common;
 
+import basemod.AutoAdd;
 import chemister.ChemisterMod;
 import chemister.actions.ResetCatalystAction;
 import chemister.cards.CatalystCard;
@@ -11,8 +12,9 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class Neutralization extends CatalystCard {
-    public static final String ID = makeID(Neutralization.class.getSimpleName());
+@AutoAdd.Ignore
+public class NeutralizationOld extends CatalystCard {
+    public static final String ID = makeID(NeutralizationOld.class.getSimpleName());
     private static final CardStats info = new CardStats(
             Chemister.Meta.CARD_COLOR,
             CardType.ATTACK,
@@ -28,7 +30,7 @@ public class Neutralization extends CatalystCard {
             Chemister.Flasks.AER
     };
 
-    public Neutralization() {
+    public NeutralizationOld() {
         super(ID, info, flasks);
 
         setCostUpgrade(2);

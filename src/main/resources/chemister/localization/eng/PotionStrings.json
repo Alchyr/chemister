@@ -18,5 +18,12 @@
     "DESCRIPTIONS": [
       "Choose a #yFlask and #yInfuse it #b%d times."
     ]
+  },
+  "${modID}:CPowerPotion": {
+    "NAME": "Reagent Potion",
+    "DESCRIPTIONS": [
+      "Choose 1 of 3 random #yReagent cards to obtain for the combat.",
+      "Choose 1 of 3 random #yReagent cards to obtain #b%d copies of for the combat."
+    ]
   }
 }

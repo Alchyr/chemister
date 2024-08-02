@@ -110,5 +110,49 @@
     "DESCRIPTIONS": [
       "The first time each turn you #y${modID}:Infuse all of your #yFlasks, gain [E] ."
     ]
+  },
+  "${modID}:CBottledTornado": {
+    "NAME": "",
+    "FLAVOR": "",
+    "DESCRIPTIONS": [
+      "Upon pickup, choose a card. The first time you #y${modID}:Infuse [#90e2e8]Aer[] each combat, draw it.",
+      "Choose a card for ",
+      " will be drawn the first time you #y${modID}:Infuse [#90e2e8]Aer[] each combat."
+    ]
+  },
+  "${modID}:CMummifiedHand": {
+    "NAME": "",
+    "FLAVOR": "",
+    "DESCRIPTIONS": [
+      "The first time you #y${modID}:Infuse each turn, a random card in your hand costs 0 for the turn."
+    ]
+  },
+  "${modID}:CFrozenEgg": {
+    "NAME": "",
+    "FLAVOR": "",
+    "DESCRIPTIONS": [
+      "Whenever you obtain a #y${modID}:Reagent, start the next combat with [E] ."
+    ]
+  },
+  "${modID}:CBirdUrn": {
+    "NAME": "",
+    "FLAVOR": "",
+    "DESCRIPTIONS": [
+      "Whenever you obtain a #y${modID}:Reagent, gain 2 max HP."
+    ]
+  },
+  "${modID}:COrangePellets": {
+    "NAME": "",
+    "FLAVOR": "",
+    "DESCRIPTIONS": [
+      "The first time each combat you #y${modID}:Infuse all your Flasks in a turn, remove all of your debuffs."
+    ]
+  },
+  "${modID}:CEnchiridion": {
+    "NAME": "",
+    "FLAVOR": "",
+    "DESCRIPTIONS": [
+      "At the start of each combat, obtain a random #y${modID}:Reagent for the combat."
+    ]
   }
 }

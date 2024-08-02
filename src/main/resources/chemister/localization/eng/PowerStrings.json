@@ -113,12 +113,12 @@
   "${modID}:SaltationPower": {
     "NAME": "Saltation",
     "DESCRIPTIONS": [
-      "This turn, whenever you gain #yBlock, draw a card.\n\nWhen your hand is full, reduce the cost of your hand to 0 for the turn and become unable to draw additional cards for the turn.",
-      "For #b%d turns, whenever you gain #yBlock, draw a card.\n\nWhen your hand is full, reduce the cost of your hand to 0 for the turn and become unable to draw additional cards for the turn."
+      "This turn, whenever you gain #yBlock, draw a card. When your hand is full, play your hand and end your turn.",
+      "For #b%d turns, whenever you gain #yBlock, draw a card. When your hand is full, play your hand and end your turn."
     ]
   },
   "${modID}:TripleThreatDebuff": {
-    "NAME": "Triple Threat",
+    "NAME": "Neutralization",
     "DESCRIPTIONS": [
       "When attacked, you gain #b%d #yVigor."
     ]

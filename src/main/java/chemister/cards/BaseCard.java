@@ -445,7 +445,7 @@ public abstract class BaseCard extends CustomCard {
     private static final Color renderColor = Color.WHITE.cpy();
     private static final List<Chemister.Flasks> tempInfusedTypesForTurn = new ArrayList<>();
     private static final List<List<Chemister.Flasks>> tempInfusedTurnHistory = new ArrayList<>();
-    private static final List<List<DisplayableAction>> flaskActions = new ArrayList<>();
+    public static final List<List<DisplayableAction>> flaskActions = new ArrayList<>();
     private static final List<Chemister.Flasks> additionalInfusions = new ArrayList<>();
     private static final List<FlaskRelic> flasks = new ArrayList<>();
     private static final Vector2 offset = new Vector2(0, 0);

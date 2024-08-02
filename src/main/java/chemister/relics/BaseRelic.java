@@ -30,10 +30,12 @@ public abstract class BaseRelic extends CustomRelic {
         this(id, GeneralUtils.removePrefix(id), tier, sfx);
     }
     public BaseRelic(String id, String imageName, RelicTier tier, LandingSound sfx) {
-        super(id, "", tier, sfx);
+        super(id, notPng(imageName) ? "" : imageName, tier, sfx);
 
         this.imageName = imageName;
-        loadTexture();
+        if (notPng(imageName)) {
+            loadTexture();
+        }
     }
 
     protected void loadTexture() {
@@ -87,5 +89,9 @@ public abstract class BaseRelic extends CustomRelic {
     public void refreshDescription() {
         this.description = getUpdatedDescription();
         this.tips.get(0).body = this.description;
+    }
+
+    private static boolean notPng(String name) {
+        return !name.endsWith(".png");
     }
 }

@@ -5,6 +5,7 @@ import basemod.BaseMod;
 import basemod.interfaces.*;
 import chemister.cards.BaseCard;
 import chemister.cards.CatalystCard;
+import chemister.cards.ReagentCard;
 import chemister.character.Chemister;
 import chemister.potions.BasePotion;
 import chemister.relics.BaseRelic;
@@ -72,7 +73,8 @@ public class ChemisterMod implements
         Chemister.Meta.registerColor();
     }
 
-    private static final List<CatalystCard> catalysts = new ArrayList<>();
+    public static final List<CatalystCard> catalysts = new ArrayList<>();
+    public static final List<ReagentCard> reagents = new ArrayList<>();
 
     @Override
     public void receiveEditCards() {
@@ -87,6 +89,10 @@ public class ChemisterMod implements
 
                     if (card instanceof CatalystCard) {
                         catalysts.add((CatalystCard) card);
+                    }
+
+                    if (card instanceof ReagentCard) {
+                        reagents.add((ReagentCard) card);
                     }
                 });
     }

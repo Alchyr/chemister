@@ -1,6 +1,8 @@
 package chemister.cards.uncommon;
 
+import chemister.actions.DrawPileToHandPredicateAction;
 import chemister.cards.BaseCard;
+import chemister.cards.WithdrawalCard;
 import chemister.character.Chemister;
 import chemister.powers.SneakySipPower;
 import chemister.util.CardStats;
@@ -26,7 +28,7 @@ public class SneakySip extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        //applySelf(new SneakySipPower(p, magicNumber));
+        addToBot(new DrawPileToHandPredicateAction(1, (card)->card instanceof WithdrawalCard));
         if (magicNumber > 0) {
             applySelf(new SneakySipPower(p, magicNumber));
         }

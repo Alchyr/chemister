@@ -3,7 +3,6 @@ package chemister.actions;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.utility.NewQueueCardAction;
-import com.megacrit.cardcrawl.actions.utility.UnlimboAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
@@ -39,7 +38,7 @@ public class PlayCardAction extends AbstractGameAction {
             card.current_x = originalCard.current_x;
             card.current_y = originalCard.current_y;
         }
-        else
+        else if (sourceGroup == null || sourceGroup.type != CardGroup.CardGroupType.HAND)
         {
             card.current_x = card.target_x = (float)Settings.WIDTH / 2.0F - 300.0F * Settings.scale;
             card.target_y = (float)Settings.HEIGHT / 2.0F;
@@ -95,11 +94,6 @@ public class PlayCardAction extends AbstractGameAction {
                 card.applyPowers();
                 this.addToTop(new NewQueueCardAction(card, true, false, true));
                 this.addToTop(new CompletelyUnlimboAction(card));
-                if (!Settings.FAST_MODE) {
-                    this.addToTop(new WaitAction(Settings.ACTION_DUR_MED));
-                } else {
-                    this.addToTop(new WaitAction(Settings.ACTION_DUR_FASTER));
-                }
             }
             else
             {
