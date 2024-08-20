@@ -2,12 +2,9 @@ package chemister.cards.uncommon;
 
 import chemister.ChemisterMod;
 import chemister.cards.BaseCard;
-import chemister.cards.InfuseCard;
 import chemister.character.Chemister;
 import chemister.util.CardStats;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import java.util.HashSet;
@@ -40,8 +37,38 @@ public class SuperbSolution extends BaseCard {
         super.applyPowers();
 
         baseBlock = origBase;
-        if (!unique.isEmpty())
-            isBlockModified = true;
+        isBlockModified = baseBlock != block;
+
+        String newDesc = this.cardStrings.DESCRIPTION + String.format(this.cardStrings.EXTENDED_DESCRIPTION[0], unique.size());
+        if (!rawDescription.equals(newDesc)) {
+            rawDescription = newDesc;
+            initializeDescription();
+        }
+    }
+
+    @Override
+    public void calculateCardDamage(AbstractMonster m) {
+        int origBase = baseBlock;
+
+        Set<Chemister.Flasks> unique = new HashSet<>(ChemisterMod.infusedTypesThisTurn);
+        baseBlock += unique.size() * magicNumber;
+
+        super.calculateCardDamage(m);
+
+        baseBlock = origBase;
+        isBlockModified = baseBlock != block;
+
+        String newDesc = this.cardStrings.DESCRIPTION + String.format(this.cardStrings.EXTENDED_DESCRIPTION[0], unique.size());
+        if (!rawDescription.equals(newDesc)) {
+            rawDescription = newDesc;
+            initializeDescription();
+        }
+    }
+
+    @Override
+    public void onMoveToDiscard() {
+        this.rawDescription = cardStrings.DESCRIPTION;
+        this.initializeDescription();
     }
 
     @Override

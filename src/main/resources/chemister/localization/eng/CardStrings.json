@@ -149,7 +149,10 @@
   },
   "${modID}:SuperbSolution": {
     "NAME": "Superb Solution",
-    "DESCRIPTION": "Gain !B! Block. NL Gain !M! additional Block for each unique Flask ${modID}:Infused this turn."
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! additional Block for each unique Flask ${modID}:Infused this turn.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (%d Flasks.)"
+    ]
   },
   "${modID}:SeismicShell": {
     "NAME": "Seismic Shell",

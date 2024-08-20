@@ -9,12 +9,22 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import static chemister.ChemisterMod.makeID;
 
 public class EndTurnIfAllPlayedModifier extends AbstractCardModifier {
-    private final ArrayList<AbstractCard> cards;
+    public static final String ID = makeID("EndTurnIfAllPlayedMod");
 
-    public EndTurnIfAllPlayedModifier(ArrayList<AbstractCard> cards) {
+    private final List<AbstractCard> cards;
+
+    public EndTurnIfAllPlayedModifier(List<AbstractCard> cards) {
         this.cards = new ArrayList<>(cards);
+    }
+
+    @Override
+    public String identifier(AbstractCard card) {
+        return ID;
     }
 
     @Override
